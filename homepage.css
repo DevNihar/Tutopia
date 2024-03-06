@@ -5,7 +5,7 @@ body {
 header {
   display: flex;
   height: 6rem;
-  background-color: beige;
+  background-color: #fff6f3;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
@@ -52,4 +52,109 @@ header .login-signup p {
   display: inline-block;
   margin: 0 15px;
   color: #505050;
+}
+
+.info {
+  background-color: #fff6f3;
+  height: 100vh;
+  position: relative;
+}
+
+.info .atom-img {
+  width: 128px;
+  height: 128px;
+  position: relative;
+  top: 5rem;
+  left: 10rem;
+  opacity: 30%;
+  scale: 0.7;
+  animation: 8s linear 0s rotating-atom infinite;
+}
+
+@keyframes rotating-atom {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.info .feather-img {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  top: -4rem;
+  left: 45rem;
+  animation: 6s ease-in-out 0s bobbing-feather infinite;
+}
+
+@keyframes bobbing-feather {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.info .paper-plane-img {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  top: -4rem;
+  left: 80rem;
+  animation: 8s ease-in-out 0s bobbing-plane infinite;
+}
+
+@keyframes bobbing-plane {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.info .trophy-img {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  top: 14rem;
+  left: 1rem;
+  transform: rotateZ(30deg);
+  opacity: 70%;
+  animation: 7s ease-in-out 0s bobbing-trophy infinite;
+}
+
+@keyframes bobbing-trophy {
+  0% {
+    transform: translateY(0);
+    transform: rotateZ(30deg);
+  }
+  50% {
+    transform: translateY(-4rem);
+    /* transform: rotateZ(30deg); */
+  }
+  100% {
+    transform: translateY(0);
+    transform: rotateZ(30deg);
+  }
+}
+
+.info .document-img {
+  width: 128px;
+  height: 128px;
+  position: relative;
+  top: 0;
+  left: 87rem;
+  transform: rotateZ(15deg);
+  scale: 0.5;
+  opacity: 70%;
 }
