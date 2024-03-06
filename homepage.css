@@ -1,0 +1,55 @@
+body {
+  font-family: Mukta;
+  margin: 0;
+}
+header {
+  display: flex;
+  height: 6rem;
+  background-color: beige;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+header .logo {
+  font-family: Merriweather;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+header .links {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .links a {
+  font-size: 20px;
+  color: #505050;
+  text-decoration: none;
+}
+
+.login-signup a:nth-of-type(1) {
+  background-color: #e75115;
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+.login-signup a:hover {
+  cursor: pointer;
+}
+
+.login-signup a:nth-of-type(2) {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+header .login-signup p {
+  display: inline-block;
+  margin: 0 15px;
+  color: #505050;
+}
