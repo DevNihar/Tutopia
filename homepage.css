@@ -43,9 +43,14 @@ header .links a {
 
 .login-signup a:nth-of-type(2) {
   background-color: white;
+  color: black;
   padding: 10px 20px;
   border-radius: 30px;
   text-decoration: none;
+}
+
+.login-signup a:nth-of-type(2):visited {
+  color: black;
 }
 
 header .login-signup p {
@@ -163,6 +168,57 @@ header .login-signup p {
   opacity: 70%;
 }
 
+.info-bg .orange-ball-img {
+  width: 450px;
+  height: 450px;
+  position: relative;
+  top: -350px;
+  left: 800px;
+  /* opacity: 50%; */
+  animation: 150s linear 0s rotating-ball infinite;
+}
+
+.info-bg .orange-ball-img img {
+  width: 450px;
+  height: 450px;
+  object-fit: contain;
+}
+
+@keyframes rotating-ball {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.info-bg .paper-plane2-img img {
+  width: 128px;
+  height: 128px;
+}
+
+.info-bg .paper-plane2-img {
+  width: 128px;
+  height: 128px;
+  position: relative;
+  top: -19rem;
+  left: 53rem;
+  animation: 8s ease-in-out 0s bobbing-plane2 infinite;
+}
+
+@keyframes bobbing-plane2 {
+  0% {
+    transform: rotateZ(0);
+  }
+  50% {
+    transform: rotateZ(30deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
 .info-fg {
   height: 100vh;
   position: relative;
@@ -241,10 +297,23 @@ header .login-signup p {
   margin-left: 0;
   background-color: #ff723a;
   border-radius: 10px;
+  transition: background-color 1s ease;
+}
+
+.info-fg .search-bar span:hover {
+  cursor: pointer;
+  background-color: #e75115;
 }
 
 .info-fg .info-right {
   /* background-color: greenyellow; */
-  opacity: 50%;
+  /* opacity: 50%; */
   height: 100%;
+  position: relative;
+}
+
+.info-fg .info-right img {
+  position: absolute;
+  bottom: 0;
+  left: 200px;
 }
