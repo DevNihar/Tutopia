@@ -62,20 +62,22 @@ header .login-signup p {
   color: #505050;
 }
 
-.info-bg {
-  background-color: #fff6f3;
-  height: 100vh;
+main {
   position: relative;
 }
 
-.background {
+.info-bg {
+  background-color: #fff6f3;
+  /* background-color: green; */
+  /* opacity: 70%; */
+  height: 100vh;
   position: relative;
 }
 
 .info-bg .atom-img {
   width: 128px;
   height: 128px;
-  position: relative;
+  position: absolute;
   top: 5rem;
   left: 10rem;
   opacity: 30%;
@@ -95,8 +97,8 @@ header .login-signup p {
 .info-bg .feather-img {
   width: 64px;
   height: 64px;
-  position: relative;
-  top: -4rem;
+  position: absolute;
+  top: 4rem;
   left: 45rem;
   animation: 6s ease-in-out 0s bobbing-feather infinite;
 }
@@ -116,8 +118,8 @@ header .login-signup p {
 .info-bg .paper-plane-img {
   width: 64px;
   height: 64px;
-  position: relative;
-  top: -4rem;
+  position: absolute;
+  top: 6rem;
   left: 80rem;
   animation: 8s ease-in-out 0s bobbing-plane infinite;
 }
@@ -137,8 +139,8 @@ header .login-signup p {
 .info-bg .trophy-img {
   width: 64px;
   height: 64px;
-  position: relative;
-  top: 14rem;
+  position: absolute;
+  top: 29rem;
   left: 1rem;
   transform: rotateZ(30deg);
   opacity: 70%;
@@ -163,8 +165,8 @@ header .login-signup p {
 .info-bg .document-img {
   width: 128px;
   height: 128px;
-  position: relative;
-  top: 0;
+  position: absolute;
+  top: 20rem;
   left: 87rem;
   transform: rotateZ(15deg);
   scale: 0.5;
@@ -174,9 +176,9 @@ header .login-signup p {
 .info-bg .orange-ball-img {
   width: 450px;
   height: 450px;
-  position: relative;
-  top: -350px;
-  left: 800px;
+  position: absolute;
+  top: 4rem;
+  left: 50rem;
   /* opacity: 50%; */
   animation: 150s linear 0s rotating-ball infinite;
 }
@@ -204,9 +206,9 @@ header .login-signup p {
 .info-bg .paper-plane2-img {
   width: 128px;
   height: 128px;
-  position: relative;
-  top: -19rem;
-  left: 53rem;
+  position: absolute;
+  top: 39rem;
+  left: 51rem;
   animation: 8s ease-in-out 0s bobbing-plane2 infinite;
 }
 
@@ -224,13 +226,14 @@ header .login-signup p {
 
 .info-fg {
   height: 100vh;
-  position: relative;
-  /* background-color: #e75115; */
-  /* opacit y: 50%; */
-  top: -100vh;
+  position: absolute;
+  /* background-color: red; */
+  /* opacity: 50%; */
+  top: 0;
   left: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  z-index: 3;
 }
 
 .info-fg .info-left {
@@ -254,7 +257,7 @@ header .login-signup p {
   font-size: 4rem;
   font-weight: 500;
 
-  margin-bottom: 0;
+  margin-bottom: 30px;
   letter-spacing: 0px;
   word-spacing: 0px;
   /* padding-right: 100px; */
@@ -324,13 +327,16 @@ header .login-signup p {
 }
 
 .Courses {
-  background: linear-gradient(rgba(255, 114, 58, 0.05) 0%, rgba(241, 77, 93, 0.03) 100%);
+  background: linear-gradient(
+    rgba(255, 114, 58, 0.05) 0%,
+    rgba(241, 77, 93, 0.03) 100%
+  );
   padding-bottom: 120px;
   padding-top: 150px;
 }
 
-.Courses-Section{
-  max-width: 1356px;
+.Courses-Section {
+  /* max-width: 1356px; */
   width: 100%;
   margin-right: 100px;
   margin-left: 100px;
@@ -355,25 +361,24 @@ header .login-signup p {
   text-align: left !important;
 }
 
-
-.Heading-Section .left-part .Title::before{
+.Heading-Section .left-part .Title::before {
   top: 15px;
   width: 30px;
   height: 2px;
-  content: '';
+  content: "";
   position: absolute;
-  background-color: #FF723A;
+  background-color: #ff723a;
   bottom: 0;
   z-index: 1;
 }
 
-h5{
+h5 {
   font-size: 20px;
   padding-left: 40px;
   margin-bottom: 20px;
 }
 
-h2{
+h2 {
   font-size: 50px;
   margin-top: 0px;
   margin-bottom: 20px;
@@ -381,7 +386,7 @@ h2{
   font-weight: 700;
 }
 
-p{
+p {
   font-size: 16px;
   font-weight: 400;
   line-height: 25px;
@@ -397,35 +402,26 @@ p{
   width: 50%;
 }
 
-.Heading-Section .Right-part .Buttons{
+.Heading-Section .Right-part .Buttons {
   margin-bottom: 30px;
   display: flex;
 }
 
-button{
+button {
   cursor: pointer;
   outline: medium none;
   text-decoration: none;
 }
 
-
-.Buttons .B:hover, .B.active {
+.Buttons .B:hover {
   color: #ffffff;
-  background-color: #FF723A;
+  background-color: #ff723a;
   border: 0;
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: 500;
-  margin: 10px 10px;
-  display: inline-block;
-  border-radius: 40px;
-  padding: 19px 39px;
-  transition: all 0.3s ease 0s;
 }
 
-.Buttons .B{
+.Buttons .B {
   border: 0;
-  color: #FF723A;
+  color: #ff723a;
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 500;
@@ -434,4 +430,10 @@ button{
   background-color: rgba(255, 114, 58, 0.1);
   border-radius: 40px;
   padding: 19px 39px;
+  transition: color, background-color 0.3s ease 0s;
+}
+
+.Right-part .Buttons .selected {
+  background-color: #ff723a;
+  color: white;
 }
