@@ -1,0 +1,3 @@
+paper plane: #FFCFBE
+btn1: #FF723A
+btn2: #e75115
