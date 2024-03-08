@@ -1,4 +1,4 @@
-paper plane: #FFCFBE
+paper plane: #FFcFbE
 btn unhovered: #FF723A
 btn2 hovered: #e75115
 
