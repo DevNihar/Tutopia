@@ -623,4 +623,28 @@ button {
   margin-left: 20px;
 }
 
+.explore {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center !important;
+}
+
+.explore_btn button{
+  border: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 15px 20px;
+  background-color: #FF723A;
+  border-radius: 40px;
+  padding: 19px 30px;
+  transition: color, background-color 0.4s ease 0s;
+}
+
+.explore_btn button:hover{
+  color: #ffffff;
+  background-color: #ff4a02;
+}
+
 
