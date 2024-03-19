@@ -125,7 +125,8 @@ input::placeholder {
 }
 
 .forgot-password:hover {
-  color: #333;
+  color: var(--login-orange1);
+  transition: color 0.3s ease 0s; 
 }
 
 .login-btn,
