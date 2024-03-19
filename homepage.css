@@ -9,6 +9,7 @@ body {
   font-family: Mukta;
   margin: 0;
 }
+
 header {
   display: flex;
   height: 6rem;
@@ -40,7 +41,7 @@ header .links a {
   width: 20%;
 }
 
-.login-signup #login-btn {
+.login-signup #loginBtn {
   background-color: #ff723a;
   padding: 10px 20px;
   border-radius: 30px;
@@ -51,7 +52,7 @@ header .links a {
   margin-left: 25px;
 }
 
-.login-signup #login-btn:hover {
+.login-signup #loginBtn:hover {
   background-color: #e75115;
 }
 
@@ -59,7 +60,7 @@ header .links a {
   cursor: pointer;
 }
 
-.login-signup #signup-btn {
+.login-signup #signupBtn {
   background-color: white;
   color: #505050;
   padding: 10px 20px;
@@ -84,7 +85,7 @@ main {
   /* opacity: 70%; */
   height: 100vh;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .info-bg .atom-img {
@@ -781,6 +782,7 @@ p {
 }
 
 .number-of-users {
+  font-family: none;
   margin: 95px;
   padding-left: 95px;
   padding-right: 95px;
@@ -818,7 +820,7 @@ p {
   background-color: rgba(255, 114, 58, 0.1);
 }
 
-.count-0 h2 {
+.count-0 .counter {
   color: #ff723a;
 }
 
