@@ -292,7 +292,7 @@ main {
   width: 100%;
 }
 
-.info-fg .search-bar input {
+.info-fg .search-bar input[type="text"] {
   width: 60%;
   height: 60px;
   padding-left: 40px;
@@ -300,6 +300,7 @@ main {
   border-radius: 10px;
   background-color: white;
   margin-right: 0;
+  margin-bottom: 0;
 }
 .info-fg .search-bar input:focus {
   outline: none;
@@ -312,7 +313,7 @@ main {
   /* flex-direction: row; */
 }
 
-.info-fg .search-bar button {
+.info-fg .info-left .search-bar button {
   /* width: 100px; */
   padding: 15px 45px;
   color: white;
@@ -954,6 +955,8 @@ footer hr {
 }
 
 #subscribe-form button {
+  background-color: var(--orange1);
+  color: white;
   font-size: 15px;
   display: block;
   width: 80%;
@@ -962,6 +965,13 @@ footer hr {
   border: none;
   /* padding-left: 20px;   */
   margin-bottom: 20px;
+  transition: color, background-color 0.4s ease 0s;
+}
+
+#subscribe-form button:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #ff4a02;
 }
 
 .foot-bottom {

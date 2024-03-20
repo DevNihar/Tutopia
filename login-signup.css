@@ -1,6 +1,6 @@
-:root{
-  --login-orange1: #FB9970;
-  --login-orange2: #F9D5B3;
+:root {
+  --login-orange1: #fb9970;
+  --login-orange2: #f9d5b3;
 }
 .modal {
   display: none;
@@ -25,11 +25,11 @@
   position: relative;
 }
 
-.hei-s{
+.hei-s {
   height: 600px;
 }
 
-.hei-l{
+.hei-l {
   height: 500px;
 }
 
@@ -50,11 +50,11 @@
   border-radius: 20px 0 0 20px;
 }
 
-.col-signup{
+.col-signup {
   background-color: var(--login-orange1);
 }
 
-.col-login{
+.col-login {
   background-color: var(--login-orange2);
 }
 
@@ -93,7 +93,8 @@
   margin-bottom: 30px;
 }
 
-#loginForm, #signupForm {
+#loginForm,
+#signupForm {
   display: flex;
   flex-direction: column;
 }
@@ -104,16 +105,20 @@
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+#loginForm input[type="text"],
+#loginForm input[type="email"],
+#loginForm input[type="password"],
+#signupForm input[type="text"],
+#signupForm input[type="email"],
+#signupForm input[type="password"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 15px;
 }
 
-input::placeholder {
+#signupForm input::placeholder,
+#loginForm input::placeholder {
   color: #999;
 }
 
@@ -126,7 +131,7 @@ input::placeholder {
 
 .forgot-password:hover {
   color: var(--login-orange1);
-  transition: color 0.3s ease 0s; 
+  transition: color 0.3s ease 0s;
 }
 
 .login-btn,
