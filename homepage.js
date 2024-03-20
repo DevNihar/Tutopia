@@ -1,5 +1,25 @@
 "use strict";
 
+window.addEventListener("scroll", function () {
+  let navbar = document.querySelector("body header");
+  let headerHeight = document.querySelector("body header").offsetHeight;
+  const filler = document.getElementById("filler");
+
+  if (window.scrollY > headerHeight) {
+    filler.style.display = "block";
+    navbar.classList.add("fixed-header");
+    navbar.classList.add("animate__animated", "animate__slideInDown");
+    navbar.style.setProperty("animation-duration", "1s");
+  } else {
+    navbar.classList.remove(
+      "fixed-header",
+      "animate__animated",
+      "animate__slideInDown"
+    );
+    filler.style.display = "none";
+  }
+});
+
 document.querySelectorAll(".category-btn").forEach(function (btn) {
   let img = btn.querySelector("img:first-of-type");
   let img2 = btn.querySelector("img:last-of-type");
