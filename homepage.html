@@ -13,6 +13,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
       href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
@@ -22,6 +28,10 @@
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link href="homepage.css" rel="stylesheet" />
     <link rel="stylesheet" href="login-signup.css" />
@@ -176,7 +186,7 @@
             harum tenetur praesentium, non esse quibusdam itaque eaque quasi.
             Sed, est quam?
           </p>
-          <div class="search-bar">
+          <div class="search-bar btn-anim">
             <form>
               <input type="text" placeholder="Search courses" name="search" />
               <button>Search Now</button>
@@ -210,48 +220,51 @@
           </div>
           <div class="categories-buttons">
             <div class="category-btn">
-              <img src="images/dna.png" />
+              <img id="dna" src="images/dna.png" />
               <span>Science</span>
               <img src="images/arrow-right.png" />
             </div>
             <div class="category-btn">
-              <img src="images/dollar.png" />
+              <img id="dollar" src="images/dollar.png" />
               <span>Business</span>
               <img src="images/arrow-right.png" />
             </div>
             <div class="category-btn">
-              <img src="images/code.png" />
+              <img id="code" src="images/code.png" />
               <span>Development</span>
               <img src="images/arrow-right.png" />
             </div>
             <div class="category-btn">
-              <img src="images/cube.png" />
+              <img id="cube" src="images/cube.png" />
               <span>Career</span>
               <img src="images/arrow-right.png" />
             </div>
             <div class="category-btn">
-              <img src="images/design.png" />
+              <img id="design" src="images/design.png" />
               <span>Arts & Design</span>
               <img src="images/arrow-right.png" />
             </div>
             <div class="category-btn">
-              <img src="images/mace.png" />
+              <img id="mace" src="images/mace.png" />
               <span>Law</span>
               <img src="images/arrow-right.png" />
             </div>
             <div class="category-btn">
-              <img src="images/ambulance.png" />
+              <img id="ambulance" src="images/ambulance.png" />
               <span>MBBS</span>
               <img src="images/arrow-right.png" />
             </div>
             <div class="category-btn">
-              <img src="images/techno.png" />
+              <img id="techno" src="images/techno.png" />
               <span>Technological</span>
               <img src="images/arrow-right.png" />
             </div>
           </div>
           <div class="all-category-btn">
-            <span class="all-categories-button">All Categories</span>
+            <!-- <span class="all-categories-button btn-anim">All Categories</span> -->
+            <button class="all-categories-button btn-anim">
+              All Categories
+            </button>
           </div>
         </div>
       </section>
@@ -598,7 +611,7 @@
           <div class="explore-section">
             <div class="explore">
               <a href="#courseslink" class="explore_btn"
-                ><button>Explore More</button></a
+                ><button class="btn-anim">Explore More</button></a
               >
             </div>
           </div>
@@ -608,29 +621,13 @@
         <!-- Number of Users Start-->
         <div class="number-of-users">
           <div class="users">
-            <div
-              class="counters count-0"
-              data-wow-delay=".1s"
-              style="
-                visibility: visible;
-                animation-delay: 0.1s;
-                animation-name: fadeInUp2;
-              "
-            >
+            <div class="counters count-0">
               <h2><span class="counter">100+</span></h2>
               <h5>Specialist Good Teachers</h5>
             </div>
           </div>
           <div class="users">
-            <div
-              class="counters count-1"
-              data-wow-delay=".2s"
-              style="
-                visibility: visible;
-                animation-delay: 0.2s;
-                animation-name: fadeInUp2;
-              "
-            >
+            <div class="counters count-1">
               <h2><span class="counter">1000+</span></h2>
               <h5>Online Learning Courses</h5>
             </div>
@@ -657,17 +654,23 @@
       <div class="foot-top">
         <h2>Tutopia.</h2>
         <div class="socials">
-          <span class="socials-icon-bg"><img src="images/facebook.png" /></span>
-          <span class="socials-icon-bg"><img src="images/twitter.png" /></span>
-          <span class="socials-icon-bg"><img src="images/linkedin.png" /></span>
           <span class="socials-icon-bg"
-            ><img src="images/google-plus.png"
+            ><img id="facebook" src="images/facebook.png"
+          /></span>
+          <span class="socials-icon-bg"
+            ><img id="twitter" src="images/twitter.png"
+          /></span>
+          <span class="socials-icon-bg"
+            ><img id="linkedin" src="images/linkedin.png"
+          /></span>
+          <span class="socials-icon-bg"
+            ><img id="google-plus" src="images/google-plus.png"
           /></span>
         </div>
       </div>
       <!-- <hr /> -->
       <div class="foot-mid">
-        <div class="about-us">
+        <div class="about-us footer-cards">
           <h3>About Us</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore amet
@@ -676,21 +679,21 @@
           <p>tutopia@edu.ac.in</p>
           <p>+00 235 695 58 , +0239564</p>
         </div>
-        <div class="contact-us">
+        <div class="contact-us footer-cards">
           <h3>Contact Us</h3>
           <p>tutopia@edu.ac.in</p>
           <p>+00 235 695 58</p>
           <p>Terms & Conditions</p>
           <p>Privacy Policy</p>
         </div>
-        <div class="quick-links">
+        <div class="quick-links footer-cards">
           <h3>Quick Links</h3>
           <p>About Us</p>
           <p>Explore pages</p>
           <p>Our Services</p>
           <p>Destinations</p>
         </div>
-        <div class="subscribe">
+        <div class="subscribe footer-cards">
           <h3>Subscribe Now</h3>
           <form id="subscribe-form">
             <input type="text" placeholder="Email Here" name="subscribe-form" />
@@ -711,5 +714,6 @@
       </div>
     </footer>
     <script src="login-signup.js"></script>
+    <script src="homepage.js"></script>
   </body>
 </html>
