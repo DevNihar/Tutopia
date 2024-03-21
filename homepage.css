@@ -834,6 +834,9 @@ p {
   text-align: center !important;
 }
 
+.explore_btn {
+  cursor: default;
+}
 .explore_btn button {
   border: 0;
   color: #ffffff;
@@ -847,6 +850,7 @@ p {
 }
 
 .explore_btn button:hover {
+  cursor: pointer;
   color: #ffffff;
   background-color: #ff4a02;
 }
