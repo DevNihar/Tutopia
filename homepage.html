@@ -197,22 +197,34 @@
               </div>
             </div>
             <form id="signupForm">
-              <label for="name">Name:</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your name"
-                required
-              />
-              <label for="designation" id="designation">Designation:</label>
-              <input
-                type="text"
-                id="designation"
-                name="designation"
-                placeholder="Enter your designation"
-                required
-              />
+              <div class="name">
+                <div class="name-box">
+                  <label for="first_name">First Name:</label>
+                  <input
+                    type="text"
+                    id="first_name"
+                    name="first_name"
+                    placeholder="first name"
+                    required
+                  /></div>
+                <div class="name-box">
+                  <label for="last_name">Last Name:</label>
+                  <input
+                    type="text"
+                    id="last_name"
+                    name="last_name"
+                    placeholder="last name"
+                    required
+                  /></div>
+              </div>
+              <label for="account-type" id="account-type-label">Account Type:</label>
+              <select
+                id="account-type-selector"
+                name="account-type">
+                <option value="Student">Student</option>
+                <option value="Teacher">Teacher</option>
+              </select>
+              
               <label for="email">Email:</label>
               <input
                 type="email"

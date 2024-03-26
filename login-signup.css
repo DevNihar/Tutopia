@@ -122,6 +122,23 @@
   color: #999;
 }
 
+#signupForm .name {
+  display: flex;
+}
+
+#signupForm .name-box input {
+  margin-top: 5px;
+}
+
+#signupForm #account-type-selector {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  color: #999;
+}
+
 .forgot-password {
   color: #666;
   text-decoration: none;
