@@ -675,6 +675,91 @@ p {
 }
 
 /* Lilesh's section */
+.container-what {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  padding-bottom: 70px;
+  padding-top: 80px;
+  background: linear-gradient(rgba(255, 114, 58, 0.05) 0%, rgba(241, 77, 93, 0.03) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.row.mb-85 {
+  margin-left: 95px;
+  margin-right: 85px;
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+}
+.col-md-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.section-title {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 65px;
+  text-align: center;
+}
+
+.section-title h2 {
+  font-size: 36px;
+}
+
+.what-box {
+  padding: 50px 15px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  text-align: center !important;
+}
+
+.what-box__icon {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.what-box h3 {
+  font-size: 34px;
+  margin-bottom: 25px;
+}
+
+.what-box p {
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+
+.mb-35 {
+  margin-bottom: 35px;
+}
+
+.wb-icon-2::before {
+  display: none;
+}
+
+.theme_btn.border_btn {
+  display: inline-block;
+  padding: 15px 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 30px;
+  margin-top: 20px;
+  color: white;
+  background-color: var(--orange1);
+}
+
+.theme_btn.border_btn:hover {
+  background-color: white; 
+  color: var(--orange2);
+  border: 1.5px solid var(--orange2); 
+}
+
 .courses {
   background: #fff6f3;
   padding-bottom: 120px;
