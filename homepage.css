@@ -485,7 +485,7 @@ p {
 /* Lilesh's section */
 .courses {
   background: #fff6f3;
-  padding-bottom: 120px;
+  padding-bottom: 0px;
   padding-top: 150px;
 }
 
@@ -798,15 +798,87 @@ p {
   background-color: #ff4a02;
 }
 
+.learn-skill-ad{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: var(--margin-base) var(--margin-base);
+  max-width: 100%;
+  background-color: white;
+  margin: 0;
+}
+
+.learn-skill-ad .skill-ad-box{
+  flex: 0 0 auto;
+  width: 28%;
+  padding: 0 20px;
+}
+
+.skill-ad-box .single-box{
+  background-color: rgba(255, 114, 58, 0.05);
+  padding: 30px 20px;
+  border-radius: 10px;
+  margin-bottom: 30px
+}
+
+.single-box .single-box-icon{
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 25px;
+  margin-top: 0px;
+  display: flex;
+  border-radius: 50%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.bc-col1{
+  background-color: #ff723a;
+}
+
+.bc-col2{
+  background-color: #f14d5d;
+}
+
+.bc-col3{
+  background-color: #8E66FF;
+}
+
+.single-box .subtitle{
+  color: #000009;
+  font-size: 24px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.single-box p{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #707070;
+  margin-bottom: 0;
+  margin-top: 0;
+  display: inline;
+  text-align: right;
+}
+
 .number-of-users {
   font-family: none;
-  margin: 95px;
-  padding-left: 95px;
-  padding-right: 95px;
+  padding-top: 0px;
+  padding-bottom: 150px;
+  padding-left: 190px;
+  padding-right: 190px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
+  background-color: white;
 }
 
 .users {
