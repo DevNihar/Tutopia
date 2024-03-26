@@ -37,14 +37,95 @@
     <link rel="stylesheet" href="login-signup.css" />
   </head>
   <body>
+    <div id="modal-blur"></div>
     <div id="filler"></div>
     <header>
       <div class="logo">Tutopia.</div>
       <nav class="links">
-        <a href="#categories">All categories</a>
-        <a href="homepage.html">Home</a>
-        <a href="instructor.html">Instructors</a>
-        <a href="#contact">Contact</a>
+        <div class="all-categories">
+          <a href="#categories" id="link-1"
+            >All categories
+            <p class="cap">^</p>
+          </a>
+          <div class="header-categories">
+            <div class="drp-dwn-card dd-card-1">
+              <a>
+                <span>
+                  <img src="images/business.png" />
+                </span>
+                <p>Business</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-2">
+              <a>
+                <span>
+                  <img src="images/tv.png" />
+                </span>
+                <p>Technology</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-3">
+              <a>
+                <span>
+                  <img src="images/purp-plane.png" />
+                </span>
+                <p>Development</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-4">
+              <a>
+                <span>
+                  <img src="images/camera.png" />
+                </span>
+                <p>Photography</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-5">
+              <a>
+                <span>
+                  <img src="images/pie.png" />
+                </span>
+                <p>Digital Marketing</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-6">
+              <a>
+                <span>
+                  <img src="images/pen.png" />
+                </span>
+                <p>Programming</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-7">
+              <a>
+                <span>
+                  <img src="images/video.png" />
+                </span>
+                <p>Videography</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-8">
+              <a>
+                <span>
+                  <img src="images/tab.png" />
+                </span>
+                <p>Illustration</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="homepage.html"
+          >Home
+          <p class="cap">^</p></a
+        >
+        <a href="instructor.html"
+          >Instructors
+          <p class="cap">^</p></a
+        >
+        <a href="#contact"
+          >Contact
+          <p class="cap">^</p></a
+        >
       </nav>
 
       <div class="login-signup">
@@ -619,6 +700,46 @@
           <!-- List Courses End -->
         </div>
 
+        <!-- Learn new skill Section -->
+        <div class="learn-skill-ad">
+          <div class="skill-ad-box">
+            <div class="single-box">
+              <div class="single-box-icon bc-col1">
+                <img
+                  src="assets/img/icon/skill-level-intermediate.svg"
+                  alt="L"
+                />
+              </div>
+              <h4 class="subtitle">Learn New Skills</h4>
+              <p>
+                There are many variations of passag of Lorm Ipsum available.
+              </p>
+            </div>
+          </div>
+          <div class="skill-ad-box">
+            <div class="single-box">
+              <div class="single-box-icon bc-col2">
+                <img src="assets/img/icon/avatar-outline-alerted.svg" alt="E" />
+              </div>
+              <h4 class="subtitle">Expert Trainers</h4>
+              <p>
+                There are many variations of passag of Lorm Ipsum available.
+              </p>
+            </div>
+          </div>
+          <div class="skill-ad-box">
+            <div class="single-box">
+              <div class="single-box-icon bc-col3">
+                <img src="assets/img/icon/report.svg" alt="F" />
+              </div>
+              <h4 class="subtitle">Free Trial Lesson</h4>
+              <p>
+                There are many variations of passag of Lorm Ipsum available.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <!-- Number of Users Start-->
         <div class="number-of-users">
           <div class="users">
@@ -714,6 +835,7 @@
         </div>
       </div>
     </footer>
+
     <script src="login-signup.js"></script>
     <script src="homepage.js"></script>
   </body>

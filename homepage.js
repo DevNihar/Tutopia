@@ -1,5 +1,33 @@
 "use strict";
 
+// document
+//   .querySelector(".header-categories")
+//   .addEventListener("mouseover", () => {
+//     let dropDown = document.querySelector(".header-categories");
+//     dropDown.classList.add("visible");
+//   });
+
+// document
+//   .querySelector(".header-categories")
+//   .addEventListener("mouseout", () => {
+//     let dropDown = document.querySelector(".header-categories");
+//     dropDown.classList.remove("visible");
+//   });
+
+// document.getElementById("link-1").addEventListener("mouseover", () => {
+//   let dropDown = document.querySelector(".header-categories");
+//   dropDown.classList.add("show");
+//   dropDown.classList.remove("hide");
+// });
+
+// document.getElementById("link-1").addEventListener("mouseout", () => {
+//   let dropDown = document.querySelector(".header-categories");
+//   if (!dropDown.classList.contains("visible")) {
+//     dropDown.classList.remove("show");
+//     dropDown.classList.add("hide");
+//   }
+// });
+
 window.addEventListener("scroll", function () {
   let navbar = document.querySelector("body header");
   let headerHeight = document.querySelector("body header").offsetHeight;
