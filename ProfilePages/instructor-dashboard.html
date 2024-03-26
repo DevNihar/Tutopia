@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutopia - Instructor Dashboard</title>
+    <!-- Include your CSS files and font links here -->
+    <link rel="stylesheet" href="instructor-dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Tutopia.</div>
+      <nav class="links">
+        <!-- Your navigation links -->
+      </nav>
+
+      <div class="profile-section">
+        <div class="profile-picture">
+          <img src="prof.png" alt="Profile Picture" />
+        </div>
+        <div class="username">
+          <span>Welcome, username</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="dashboard">
+        <h1>Instructor Dashboard</h1>
+
+        <!-- Course Management -->
+        <section class="course-management">
+          <h2>Course Management</h2>
+          <div class="course-list">
+            <div class="course-card">
+              <div class="course-details">
+                <h3>Introduction to Web Development</h3>
+                <p>Learn the basics of HTML, CSS, and JavaScript</p>
+                <div class="course-meta">
+                  <span><i class="fas fa-users"></i> 120 Students</span>
+                  <span><i class="fas fa-clock"></i> 8 Weeks</span>
+                </div>
+              </div>
+              <div class="course-actions">
+                <button class="btn btn-primary">Edit Course</button>
+                <button class="btn btn-secondary">View Analytics</button>
+              </div>
+            </div>
+
+            <div class="course-card">
+              <div class="course-details">
+                <h3>React.js Fundamentals</h3>
+                <p>Master the popular React.js library for building user interfaces</p>
+                <div class="course-meta">
+                  <span><i class="fas fa-users"></i> 85 Students</span>
+                  <span><i class="fas fa-clock"></i> 6 Weeks</span>
+                </div>
+              </div>
+              <div class="course-actions">
+                <button class="btn btn-primary">Edit Course</button>
+                <button class="btn btn-secondary">View Analytics</button>
+              </div>
+            </div>
+          </div>
+          <button class="add-course-btn">Add New Course</button>
+        </section>
+
+        <!-- Student Progress -->
+        <section class="student-progress">
+          <h2>Student Progress</h2>
+          <div class="student-list">
+            <div class="student-card">
+              <div class="student-details">
+                <img src="student-avatar.jpg" alt="Student Avatar" />
+                <h3>Emily Johnson</h3>
+                <p>Introduction to Web Development</p>
+              </div>
+              <div class="student-progress-bar">
+                <div class="progress" style="width: 75%;"></div>
+              </div>
+              <button class="btn btn-primary">View Details</button>
+            </div>
+
+            <div class="student-card">
+              <div class="student-details">
+                <img src="student-avatar.jpg" alt="Student Avatar" />
+                <h3>Michael Smith</h3>
+                <p>React.js Fundamentals</p>
+              </div>
+              <div class="student-progress-bar">
+                <div class="progress" style="width: 60%;"></div>
+              </div>
+              <button class="btn btn-primary">View Details</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Announcements and Updates -->
+        <section class="announcements">
+          <h2>Announcements and Updates</h2>
+          <div class="announcement-list">
+            <div class="announcement-card">
+              <h3>New Course Coming Soon</h3>
+              <p>
+                We're excited to announce that a new course on "Node.js for Beginners" will be
+                available next month. Stay tuned for more details!
+              </p>
+              <span class="announcement-date">Posted on: May 1, 2023</span>
+            </div>
+
+            <div class="announcement-card">
+              <h3>Platform Maintenance</h3>
+              <p>
+                The Tutopia platform will undergo scheduled maintenance on May 15th, 2023, from
+                9:00 PM to 11:00 PM (UTC). During this time, the platform may be unavailable.
+              </p>
+              <span class="announcement-date">Posted on: April 28, 2023</span>
+            </div>
+          </div>
+          <button class="add-announcement-btn">Add New Announcement</button>
+        </section>
+
+        <!-- Resources and Materials -->
+        <section class="resources">
+          <h2>Resources and Materials</h2>
+          <div class="resource-list">
+            <div class="resource-card">
+              <h3>Teaching Guide for Web Development</h3>
+              <p>A comprehensive guide for instructors teaching web development courses.</p>
+              <button class="btn btn-primary">Download</button>
+            </div>
+
+            <div class="resource-card">
+              <h3>React.js Project Templates</h3>
+              <p>A collection of project templates for React.js courses.</p>
+              <button class="btn btn-primary">Download</button>
+            </div>
+          </div>
+          <button class="add-resource-btn">Add New Resource</button>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <div class="foot-top">
+        <h2>Tutopia.</h2>
+        <div class="socials">
+          <!-- Your social media icons -->
+        </div>
+      </div>
+      <div class="foot-mid">
+        <div class="about-us footer-cards">
+          <!-- Your about us section -->
+        </div>
+        <div class="contact-us footer-cards">
+          <!-- Your contact us section -->
+        </div>
+        <div class="quick-links footer-cards">
+          <!-- Your quick links section -->
+        </div>
+        <div class="subscribe footer-cards">
+          <!-- Your subscribe section -->
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div class="copyright">
+          Copyright@2024 Tutopia. All Rights Reserved.
+        </div>
+        <div class="help">
+          <!-- Your help links -->
+        </div>
+      </div>
+    </footer>
+
+    <!-- Include your JavaScript files here -->
+    <script src="script.js"></script>
+  </body>
+</html>
