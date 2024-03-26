@@ -51,7 +51,7 @@ body .fixed-header {
   top: 0;
   width: 100%;
   background-color: white;
-  z-index: 4;
+  z-index: 6;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -63,6 +63,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
+  z-index: 6;
 }
 
 header .logo {
@@ -91,15 +92,14 @@ header .links .cap {
   font-weight: 200;
 }
 
-header .header-categories {
-  display: none;
+/* header .all-categories .header-categories {
   position: absolute;
   width: 900px;
   padding: 30px 30px 15px;
   background-color: white;
   top: 96px;
   left: 380px;
-  z-index: 4;
+  z-index: 5;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -108,12 +108,12 @@ header .header-categories {
   box-sizing: border-box;
   transform: translateY(-20px);
   transform-origin: top;
-  /* animation: cat-entrance 1s re; */
+  display: none;
 }
 
 header .all-categories:hover .header-categories {
-  display: block;
-}
+  display: flex;
+} */
 
 @keyframes fadeInDown {
   from {
@@ -144,13 +144,13 @@ header .show {
 header .hide {
   animation: fadeOutUp 0.3s forwards;
 }
-
+/* 
 header .header-categories .drp-dwn-card {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  /* height: 35px; */
+  /* height: 35px; 
   padding: 14px 25px;
   margin: 0 5px 15px 0;
   border-radius: 8px;
@@ -192,7 +192,7 @@ header .header-categories .dd-card-7 {
 
 header .header-categories .dd-card-8 {
   background-color: var(--header-card-8-bg);
-}
+} */
 
 .login-signup {
   width: 20%;
@@ -1065,13 +1065,15 @@ p {
 
 .number-of-users {
   font-family: none;
-  margin: 95px;
-  padding-left: 95px;
-  padding-right: 95px;
+  padding-top: 0px;
+  padding-bottom: 150px;
+  padding-left: 190px;
+  padding-right: 190px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
+  background-color: white;
 }
 
 .users {
