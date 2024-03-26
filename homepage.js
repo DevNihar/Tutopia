@@ -129,6 +129,7 @@ function cardFadeUp() {
   let count = 0;
   let box = document.querySelector(".count-0");
   let cards = document.querySelectorAll(".users");
+  let cards2 = document.querySelectorAll(".skill-ad-box");
   if (isInViewport(box)) {
     cards.forEach(function (card) {
       card.classList.add("animate__animated", "animate__fadeInUp");
@@ -136,6 +137,12 @@ function cardFadeUp() {
       card.style.setProperty("animation-delay", `${delay}s`);
       delay += 0.1;
       numCounter(`.count-${count++}`);
+    });
+    cards2.forEach(function (card) {
+      card.classList.add("animate__animated", "animate__fadeInUp");
+      card.style.setProperty("animation-duration", "1s");
+      card.style.setProperty("animation-delay", `${delay}s`);
+      delay += 0.1;
     });
   }
 }
