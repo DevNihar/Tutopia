@@ -51,7 +51,7 @@ body .fixed-header {
   top: 0;
   width: 100%;
   background-color: white;
-  z-index: 6;
+  z-index: 4;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -63,7 +63,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
-  z-index: 6;
+  /* z-index: 6; */
 }
 
 header .logo {

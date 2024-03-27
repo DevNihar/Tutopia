@@ -23,6 +23,27 @@ function resetAnimations() {
   modalBlur.style.animation = "none";
 }
 
+function closeModal(modal) {
+  modal.style.display = "none";
+  resetAnimations();
+}
+
+function isValidPassword(password) {
+  // Regular expressions for password criteria
+  const lengthRegex = /.{8,}/;
+  const uppercaseRegex = /[A-Z]/;
+  const numberRegex = /\d/;
+  const specialCharRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+
+  // Check if the password meets all criteria
+  const hasValidLength = lengthRegex.test(password);
+  const hasUppercase = uppercaseRegex.test(password);
+  const hasNumber = numberRegex.test(password);
+  const hasSpecialChar = specialCharRegex.test(password);
+
+  return hasValidLength && hasUppercase && hasNumber && hasSpecialChar;
+}
+
 // Open login modal
 loginBtn.onclick = function () {
   loginModal.style.display = "block";
@@ -37,13 +58,11 @@ signupBtn.onclick = function () {
 
 // Close modals
 closeLoginBtn.onclick = function () {
-  loginModal.style.display = "none";
-  resetAnimations();
+  closeModal(loginModal);
 };
 
 closeSignupBtn.onclick = function () {
-  signupModal.style.display = "none";
-  resetAnimations();
+  closeModal(signupModal);
 };
 
 // Close modals when clicking outside
@@ -61,16 +80,74 @@ window.onclick = function (event) {
 const loginForm = document.getElementById("loginForm");
 const signupForm = document.getElementById("signupForm");
 
-loginForm.addEventListener("submit", function (event) {
+// Handle form submissions
+loginForm.addEventListener("submit", async function (event) {
   event.preventDefault(); // Prevent form submission
-  // Add your login logic here
-  console.log("Login form submitted");
-  loginModal.style.display = "none";
+
+  const email = loginForm.querySelector("#email").value;
+  const password = loginForm.querySelector("#password").value;
+
+  // Send login request to server
+  const response = await fetch("http://localhost:3000/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, password }),
+  });
+
+  if (response.ok) {
+    // If response status is OK (2xx), assume successful registration
+    console.log("Login Sucessfull!!!");
+    closeModal(loginModal);
+  } else {
+    // If response status is not OK, handle error
+    console.error("Failed to register user:", await response.text());
+  }
 });
 
-signupForm.addEventListener("submit", function (event) {
+signupForm.addEventListener("submit", async function (event) {
   event.preventDefault(); // Prevent form submission
-  // Add your sign-up logic here
-  console.log("Sign-up form submitted");
-  signupModal.style.display = "none";
+  const pattern = signupForm.querySelector("#signupForm #pass-pattern");
+  const firstName = signupForm.querySelector("#first_name").value;
+  console.log(firstName);
+  const lastName = signupForm.querySelector("#last_name").value;
+  console.log(lastName);
+  const accountType = signupForm.querySelector("#account-type-selector").value;
+  console.log(accountType);
+  const email = signupForm.querySelector("#email").value;
+  console.log(email);
+  const password = signupForm.querySelector("#password").value;
+  console.log(password);
+
+  if (isValidPassword(password)) {
+    // Send sign-up request to server
+    const response = await fetch("http://localhost:3000/sign-up", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        accountType,
+        email,
+        password,
+      }),
+    });
+    // console.log(response);
+
+    if (response.ok) {
+      // If response status is OK (2xx), assume successful registration
+      console.log("User registered successfully");
+      pattern.style.display = "none";
+      closeModal(signupModal);
+    } else {
+      // If response status is not OK, handle error
+      console.error("Failed to register user:", await response.text());
+      pattern.style.display = "none";
+    }
+  } else {
+    pattern.style.display = "block";
+  }
 });
