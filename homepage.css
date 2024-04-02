@@ -3,6 +3,7 @@
   --orange2: #e75115;
   --text-light: #505050;
   --bg-color: #fff6f3;
+  --profile-bg-color: rgba(123, 168, 238, 0.2);
   --margin-base: 95px;
   --font-base: Manrope;
   --header-card-1-bg: #ffefe8;
@@ -92,7 +93,7 @@ header .links .cap {
   font-weight: 200;
 }
 
-/* header .all-categories .header-categories {
+header .all-categories .header-categories {
   position: absolute;
   width: 900px;
   padding: 30px 30px 15px;
@@ -108,50 +109,24 @@ header .links .cap {
   box-sizing: border-box;
   transform: translateY(-20px);
   transform-origin: top;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
 
 header .all-categories:hover .header-categories {
-  display: flex;
-} */
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px); /* Move slightly above */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0); /* Move to original position */
-  }
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-@keyframes fadeOutUp {
-  from {
-    opacity: 1;
-    transform: translateY(0); /* Move to original position */
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-20px); /* Move slightly above */
-  }
-}
-
-header .show {
-  animation: fadeInDown 0.3s forwards;
-}
-
-header .hide {
-  animation: fadeOutUp 0.3s forwards;
-}
-/* 
 header .header-categories .drp-dwn-card {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  /* height: 35px; 
-  padding: 14px 25px;
+  /* height: 35px;  */
+  padding: 14px 10px;
   margin: 0 5px 15px 0;
   border-radius: 8px;
   box-sizing: border-box;
@@ -192,10 +167,12 @@ header .header-categories .dd-card-7 {
 
 header .header-categories .dd-card-8 {
   background-color: var(--header-card-8-bg);
-} */
+}
 
 .login-signup {
   width: 20%;
+  position: relative;
+  display: block;
 }
 
 .login-signup #loginBtn {
@@ -230,6 +207,24 @@ header .login-signup p {
   display: inline-block;
   margin: 0 15px;
   color: #505050;
+}
+
+header .profile {
+  width: 20%;
+  height: 50px;
+  display: none;
+  justify-content: right;
+  align-items: center;
+}
+
+header .profile span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--profile-bg-color);
 }
 
 main {
@@ -682,7 +677,10 @@ p {
   position: relative;
   padding-bottom: 70px;
   padding-top: 80px;
-  background: linear-gradient(rgba(255, 114, 58, 0.05) 0%, rgba(241, 77, 93, 0.03) 100%);
+  background: linear-gradient(
+    rgba(255, 114, 58, 0.05) 0%,
+    rgba(241, 77, 93, 0.03) 100%
+  );
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -710,6 +708,11 @@ p {
 
 .section-title h2 {
   font-size: 36px;
+}
+
+.reg-img:hover img {
+  transform: translateY(-20px);
+  transition: transform ease-in 0.3s;
 }
 
 .what-box {
@@ -755,9 +758,9 @@ p {
 }
 
 .theme_btn.border_btn:hover {
-  background-color: white; 
+  background-color: white;
   color: var(--orange2);
-  border: 1.5px solid var(--orange2); 
+  border: 1.5px solid var(--orange2);
 }
 
 .courses {
@@ -878,25 +881,25 @@ p {
   margin-right: 95px;
 }
 
-.item1 {
+.course-card {
   border-radius: 10px;
   background-color: #ffffff;
   padding: 10px;
 }
 
-.item1 .img-part {
+.course-card .img-part {
   overflow: hidden;
   border-radius: 5px;
   position: relative;
   margin-bottom: 20px;
 }
 
-.item1 .course-image {
+.course-card .course-image {
   transition: transform 0.5s ease;
   width: 100%;
 }
 
-.item1:hover .course-image {
+.course-card:hover .course-image {
   transform: scale(1.1);
 }
 
@@ -908,6 +911,12 @@ p {
   color: #ffffff;
   padding: 5px 10px;
   border-radius: 10px;
+}
+
+.feedback-tag img {
+  position: relative;
+  top: 1px;
+  margin: 0 3px;
 }
 
 .course-details {
@@ -938,6 +947,9 @@ p {
 }
 
 .tags a.price-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #ffffff;
   text-align: center;
   line-height: 70px;
@@ -945,8 +957,8 @@ p {
   background: #ff723a;
   font-size: 18px;
   font-weight: 500;
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   top: -57px;
   right: 20px;
@@ -1009,6 +1021,7 @@ p {
 .course_author {
   justify-content: space-between;
   display: flex;
+  margin-top: 10px;
 }
 
 .course_author .author-img-details {

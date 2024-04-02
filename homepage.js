@@ -1,32 +1,74 @@
 "use strict";
 
-// document
-//   .querySelector(".header-categories")
-//   .addEventListener("mouseover", () => {
-//     let dropDown = document.querySelector(".header-categories");
-//     dropDown.classList.add("visible");
-//   });
+window.onload = () => {
+  fetchCourseData();
+};
 
-// document
-//   .querySelector(".header-categories")
-//   .addEventListener("mouseout", () => {
-//     let dropDown = document.querySelector(".header-categories");
-//     dropDown.classList.remove("visible");
-//   });
+const fetchCourseData = () => {
+  fetch("http://localhost:3000/api/courses")
+    .then((response) => response.json())
+    .then((courses) => {
+      // Use the courses array to render the course cards on your homepage
+      renderCoursesOnHomepage(courses);
+    })
+    .catch((error) => {
+      console.error("Error fetching course data:", error);
+    });
+};
 
-// document.getElementById("link-1").addEventListener("mouseover", () => {
-//   let dropDown = document.querySelector(".header-categories");
-//   dropDown.classList.add("show");
-//   dropDown.classList.remove("hide");
-// });
+const renderCoursesOnHomepage = (courses) => {
+  console.log(courses);
+  const coursesCards = document.querySelectorAll(".course-card");
 
-// document.getElementById("link-1").addEventListener("mouseout", () => {
-//   let dropDown = document.querySelector(".header-categories");
-//   if (!dropDown.classList.contains("visible")) {
-//     dropDown.classList.remove("show");
-//     dropDown.classList.add("hide");
-//   }
-// });
+  coursesCards.forEach((card, index) => {
+    const feedbackTag = card.querySelector(".feedback-tag");
+    feedbackTag.innerHTML = `${courses[index].rating}<img src="images/star.png" />(${courses[index].no_of_people_rated})`;
+
+    // Update course type
+    const typeTag = card.querySelector(".tags span");
+    typeTag.textContent = courses[index].type;
+
+    // Update Price Tag
+    const priceTag = card.querySelector(".price-tag");
+    priceTag.textContent = `Rs.${courses[index].price}`;
+
+    // Update course name
+    const subtitle = card.querySelector(".subtitle a");
+    subtitle.textContent = courses[index].name;
+
+    // Update course duration
+    const courseDuration = card.querySelector(".course_duration");
+    courseDuration.innerHTML = `<img class="icon" src="images/time.svg" alt="course-meta" /> ${courses[index].duration.hours} Hours`;
+
+    // Update course difficulty level
+    const courseDifficulty = card.querySelector(".course_difficulty");
+    const difficulty = courses[index].difficulty_level;
+    if (difficulty === "Easy") {
+      courseDifficulty.innerHTML = `<img class="icon" src="images/easy.png" alt="course-meta" /> ${difficulty}`;
+    } else if (difficulty === "Intermediate") {
+      courseDifficulty.innerHTML = `<img class="icon" src="images/medium.png" alt="course-meta" /> ${difficulty}`;
+    } else {
+      courseDifficulty.innerHTML = `<img class="icon" src="images/hard.png" alt="course-meta" /> ${difficulty}`;
+    }
+
+    // Update course short description
+    const subSubTitle = card.querySelector(".sub-sub-title");
+    subSubTitle.textContent = courses[index].short_description;
+
+    // Update Author Details
+    const teacher = courses[index].teacher;
+    const teacherName = card.querySelector(
+      ".course_author .authors-details h5"
+    );
+    const teacherTitle = card.querySelector(
+      ".course_author .authors-details span"
+    );
+    const studentsTaught = card.querySelector(".course_author p span");
+    teacherName.textContent = `${teacher.first_name} ${teacher.last_name}`;
+    teacherTitle.textContent = teacher.title;
+    studentsTaught.textContent = `${teacher.students_taught}+`;
+  });
+};
 
 window.addEventListener("scroll", function () {
   let navbar = document.querySelector("body header");
@@ -85,6 +127,10 @@ document.querySelectorAll(".socials-icon-bg").forEach(function (btn) {
     btn.style.backgroundColor = "white";
   });
 });
+
+// document.querySelectorAll(".reg-img").forEach(function (img) {
+//   img.addEventListener()
+// });
 
 // Function to check if an element is in the viewport
 function isInViewport(element) {
@@ -171,11 +217,25 @@ function buttonFadeUp() {
   });
 }
 
+function registerSectionFadeUp() {
+  const sections = document.querySelectorAll(".reg-sec");
+  let delay = 0;
+  sections.forEach(function (section) {
+    if (isInViewport(section)) {
+      section.classList.add("animate__animated", "animate__fadeInUp");
+      section.style.setProperty("animation-duration", "1s");
+      section.style.setProperty("animation-delay", `${delay}s`);
+      delay += 0.1;
+    }
+  });
+}
+
 // Function to handle scroll event
 function handleScroll() {
   cardFadeUp();
   footerCardFadeUp();
   buttonFadeUp();
+  registerSectionFadeUp();
 }
 
 // Attach scroll event listener

@@ -23,8 +23,16 @@ function resetAnimations() {
   modalBlur.style.animation = "none";
 }
 
+function openModal(modal) {
+  modal.style.display = "block";
+  animatePopUp(modal);
+}
+
 function closeModal(modal) {
   modal.style.display = "none";
+  if (modal === loginModal) {
+    document.getElementById("invalid-login").style.display = "none";
+  }
   resetAnimations();
 }
 
@@ -46,14 +54,15 @@ function isValidPassword(password) {
 
 // Open login modal
 loginBtn.onclick = function () {
-  loginModal.style.display = "block";
-  animatePopUp(loginModal);
+  openModal(loginModal);
 };
 
 // Open signup modal
 signupBtn.onclick = function () {
-  signupModal.style.display = "block";
-  animatePopUp(signupModal);
+  let section = document.getElementById("register-now");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
 };
 
 // Close modals
@@ -76,6 +85,13 @@ window.onclick = function (event) {
   }
 };
 
+const registerNow = document.querySelectorAll(".theme_btn");
+registerNow.forEach(function (link) {
+  link.addEventListener("click", function () {
+    openModal(signupModal);
+  });
+});
+
 // Handle form submissions
 const loginForm = document.getElementById("loginForm");
 const signupForm = document.getElementById("signupForm");
@@ -96,13 +112,15 @@ loginForm.addEventListener("submit", async function (event) {
     body: JSON.stringify({ email, password }),
   });
 
-  if (response.ok) {
+  if (response.status === 200) {
     // If response status is OK (2xx), assume successful registration
     console.log("Login Sucessfull!!!");
     closeModal(loginModal);
-  } else {
-    // If response status is not OK, handle error
-    console.error("Failed to register user:", await response.text());
+    document.querySelector(".login-signup").style.display = "none";
+    document.querySelector(".profile").style.display = "flex";
+  } else if (response.status === 401) {
+    console.log("Login Unsucessfull!!");
+    document.getElementById("invalid-login").style.display = "block";
   }
 });
 
@@ -142,6 +160,7 @@ signupForm.addEventListener("submit", async function (event) {
       console.log("User registered successfully");
       pattern.style.display = "none";
       closeModal(signupModal);
+      openModal(loginModal);
     } else {
       // If response status is not OK, handle error
       console.error("Failed to register user:", await response.text());
