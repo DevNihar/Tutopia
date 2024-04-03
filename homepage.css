@@ -50,7 +50,7 @@ body {
 body .fixed-header {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 95%;
   background-color: white;
   z-index: 4;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -225,6 +225,10 @@ header .profile span {
   height: 50px;
   border-radius: 50%;
   background-color: var(--profile-bg-color);
+}
+
+header .profile span:hover {
+  cursor: pointer;
 }
 
 main {
