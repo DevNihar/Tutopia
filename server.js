@@ -18,6 +18,54 @@ const pool = new Pool({
 
 app.use(express.json());
 
+// NEED TO BE FIXED!!!
+// Getting All courses from the courses table
+// Currently bugged as it will get all the courses from the table
+app.get("/api/courses", (req, res) => {
+  pool.query("SELECT * FROM courses", async (err, courseResult) => {
+    if (err) {
+      console.error("Error executing query", err.stack);
+      return res.status(500).json({ error: "Something went wrong" });
+    }
+
+    // Map the results to an array of course objects with teacher details
+    const courses = await Promise.all(
+      courseResult.rows.map(async (row) => {
+        const teacherResult = await pool.query(
+          "SELECT * FROM teachers WHERE teacher_id = $1",
+          [row.teacher_id]
+        );
+
+        const teacher = teacherResult.rows[0];
+
+        return {
+          course_id: row.course_id,
+          difficulty_level: row.difficulty_level,
+          duration: row.duration,
+          short_description: row.short_description,
+          long_description: row.long_description,
+          name: row.name,
+          rating: row.rating,
+          no_of_people_rated: row.no_of_people_rated,
+          type: row.type,
+          price: row.price,
+          teacher: {
+            teacher_id: teacher.teacher_id,
+            first_name: teacher.first_name,
+            last_name: teacher.last_name,
+            email: teacher.email,
+            title: teacher.title,
+            students_taught: teacher.students_taught,
+          },
+        };
+      })
+    );
+
+    // console.log("Response headers:", res.getHeaders());
+    res.json(courses);
+  });
+});
+
 // Hash password function
 const hashPassword = async (password) => {
   const saltRounds = 10;

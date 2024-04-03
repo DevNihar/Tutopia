@@ -99,6 +99,12 @@
   flex-direction: column;
 }
 
+#loginForm #invalid-login {
+  display: none;
+  color: red;
+  font-size: 10px;
+}
+
 .modal label {
   color: #555;
   font-weight: bold;
