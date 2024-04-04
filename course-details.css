@@ -1,6 +1,7 @@
 :root {
   --orange1: #ff723a;
   --orange2: #e75115;
+  --text-light-grey: #707070;
   --text-light: #505050;
   --bg-color: #fff6f3;
   --profile-bg-color: rgba(123, 168, 238, 0.2);
@@ -14,12 +15,13 @@
   --header-card-6-bg: #ffeff1;
   --header-card-7-bg: #f1f8e4;
   --header-card-8-bg: #fbedff;
+  --play-button-color: #3b87e8;
 }
 
 body {
   font-family: var(--font-base);
   margin: 0;
-  background-color: var(--bg-color);
+  background-color: #ffffff;
 }
 
 #filler {
@@ -42,10 +44,11 @@ header {
   position: relative;
   display: flex;
   height: 6rem;
-  background-color: #fff6f3;
+  background-color: white;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   /* z-index: 6; */
 }
 
@@ -232,90 +235,204 @@ header .profile .profile-dropdown span a:hover {
   color: inherit;
 }
 
-/* General styling */
-.page-title-area {
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  background-repeat: no-repeat;
-  min-height: 200px;
-  position: relative;
-  z-index: 1;
-  padding-left: 95px;
-}
-
-.align-items-end {
-  align-items: flex-end !important;
-}
-
-.d-flex {
-  display: flex !important;
-}
-
-.course-container {
-  max-width: 540px;
-  width: 100%;
-  margin-right: 95px;
-  margin-left: 95px;
-}
-
-.row-course {
-  --bs-gutter-x: 2.25rem;
-  --bs-gutter-y: 0;
+.breadcrumbs {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: calc(var(--bs-gutter-y) * -1);
-  margin-right: calc(var(--bs-gutter-x) / -2);
-  margin-left: calc(var(--bs-gutter-x) / -2);
+  margin: 100px var(--margin-base) 0 var(--margin-base);
+  align-items: center;
 }
 
-.row-course > * {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) / 2);
-  padding-left: calc(var(--bs-gutter-x) / 2);
-  margin-top: var(--bs-gutter-y);
+.breadcrumbs a:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
-.page-title-wrapper {
-  position: relative;
-  z-index: 2;
+.breadcrumbs a:visited {
+  color: inherit;
 }
 
-/* Page title styling */
-.page-title-wrapper .page-title {
-  font-size: 35px;
-  color: #1b212f; /* Adjust color as needed */
-  margin-bottom: 25px; /* Adjust margin as needed */
+.breadcrumbs p {
+  margin: 0 5px;
 }
 
-/* Breadcrumb styling */
-.breadcrumb {
+.video-section {
   display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  margin-bottom: 1rem;
-  list-style: none;
+  margin: 80px var(--margin-base) 0 var(--margin-base);
+  background-color: #ffffff;
+  max-height: 85vh;
 }
 
-.breadcrumb li {
-  margin-right: 5px; /* Adjust margin as needed */
+.video-section .left-box {
+  display: flex;
+  flex-direction: column;
+  width: 66%;
+  box-sizing: border-box;
 }
 
-.breadcrumb li a {
-  color: #1b212f; /* Adjust color as needed */
+.video-section .left-box h2 {
+  color: #1b212f;
+  line-height: 1.1;
+  margin-top: 0px;
+  margin-bottom: 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.video-section .left-box h4 {
+  color: var(--text-light-grey);
+  font-weight: 500;
+  margin-bottom: 20px;
   font-size: 18px;
-  line-height: 1;
-  text-decoration: none;
 }
 
-.breadcrumb li::after {
-  content: "/";
-  margin-left: 5px; /* Adjust margin as needed */
-  margin-right: 5px; /* Adjust margin as needed */
-  color: #1b212f; /* Adjust color as needed */
+.video-section .left-box video {
+  width: 100%;
 }
+
+.video-section .left-box video:hover {
+  cursor: pointer;
+}
+
+.video-section .left-box .tags {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.video-section .left-box .tags a {
+  color: #1b212f;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  border: 1px solid rgba(112, 112, 112, 0.2);
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 30px;
+  margin-right: 8px;
+  transition: all 0.3s ease 0s;
+}
+
+.video-section .left-box .tags a:hover {
+  cursor: pointer;
+  background-color: var(--orange1);
+  color: #ffffff;
+}
+
+.video-section .right-box {
+  display: flex;
+  flex-direction: column;
+  width: 34%;
+  margin: 0 30px;
+}
+
+.video-section .right-box .price-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  /* margin-top: 0; */
+}
+
+.video-section .right-box .price-box span:nth-of-type(1) {
+  text-decoration: line-through;
+  color: var(--text-light-grey);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.video-section .right-box .price-box span:nth-of-type(2) {
+  color: #1b212f;
+  font-weight: 700;
+  margin-left: 10px;
+  font-size: 24px;
+  line-height: 1.6;
+}
+
+.video-section .right-box .price-box button {
+  background-color: var(--orange1);
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  padding: 15px 35px;
+  border-radius: 40px;
+  transition: background-color 0.4s ease-in 0s;
+  border: none;
+}
+
+.video-section .right-box .price-box button:hover {
+  background-color: var(--orange2);
+  cursor: pointer;
+}
+
+.video-section .right-box .price-box span:nth-of-type(3) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--play-button-color);
+  transition: background-color 0.2s ease 0s;
+}
+
+.video-section .right-box .price-box span:nth-of-type(3):hover {
+  cursor: pointer;
+  background-color: var(--orange1);
+}
+
+.price-box span:nth-of-type(3) img {
+  width: 20px;
+  height: 20px;
+}
+
+.right-box h5 {
+  color: #1b212f;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(164, 157, 157, 0.2);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  font-weight: 700;
+}
+
+.video-section .right-box .video-list {
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-bottom: 40px;
+}
+
+.video-section .right-box .video-list .vid-list-element {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.video-list .vid-list-element .vle-left {
+  margin-right: 200px;
+}
+
+.video-list .vid-list-element .vle-left a {
+  color: var(--text-light);
+  font-size: 16px;
+  line-height: 1;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.video-list .vid-list-element .vle-left a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.video-list .vid-list-element p {
+  color: var(--text-light);
+}
+
+/* color: #505050;
+  font-size: 16px;
+  line-height: 1;
+  display: block; */
 
 /* Footer */
 footer {
