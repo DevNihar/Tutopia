@@ -67,10 +67,16 @@ header {
   /* z-index: 6; */
 }
 
-header .logo {
+header .logo a {
+  text-decoration: none;
+  color: inherit;
   font-family: Merriweather;
   font-size: 2rem;
   font-weight: 600;
+}
+
+header .logo a:hover {
+  color: inherit;
 }
 
 header .links {
@@ -210,6 +216,7 @@ header .login-signup p {
 }
 
 header .profile {
+  position: relative;
   width: 20%;
   height: 50px;
   display: none;
@@ -217,7 +224,7 @@ header .profile {
   align-items: center;
 }
 
-header .profile span {
+header .profile .profile-logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -227,8 +234,55 @@ header .profile span {
   background-color: var(--profile-bg-color);
 }
 
-header .profile span:hover {
+header .profile .profile-logo:hover {
   cursor: pointer;
+}
+
+header .profile .profile-dropdown {
+  position: absolute;
+  top: 60px;
+  left: 220px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  /* align-items: center; */
+  /* padding: 10px; */
+  border-radius: 10px;
+  /* width: 100px; */
+  background-color: white;
+  z-index: 6;
+}
+
+header .profile .profile-dropdown span {
+  display: inline-block;
+  /* margin: 5px 0; */
+  color: #505050;
+  padding: 5px 15px 5px 15px;
+}
+
+header .profile .profile-dropdown span:first-of-type {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+header .profile .profile-dropdown span:last-of-type {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+header .profile .profile-dropdown span:hover {
+  cursor: pointer;
+  /* text-decoration: underline 2px rgba(0, 0, 0, 0.5); */
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+header .profile .profile-dropdown span a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header .profile .profile-dropdown span a:hover {
+  color: inherit;
 }
 
 main {
