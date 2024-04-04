@@ -248,6 +248,7 @@ header .profile .profile-dropdown span a:hover {
 
 .breadcrumbs a:visited {
   color: inherit;
+  text-decoration: none;
 }
 
 .breadcrumbs p {
@@ -287,6 +288,7 @@ header .profile .profile-dropdown span a:hover {
 
 .video-section .left-box video {
   width: 100%;
+  border-radius: 8px;
 }
 
 .video-section .left-box video:hover {
@@ -428,11 +430,6 @@ header .profile .profile-dropdown span a:hover {
 .video-list .vid-list-element p {
   color: var(--text-light);
 }
-
-/* color: #505050;
-  font-size: 16px;
-  line-height: 1;
-  display: block; */
 
 /* Footer */
 footer {

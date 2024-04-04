@@ -21,6 +21,22 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// Switch signup-login buttons on header with profile
+document
+  .querySelector("header .profile .profile-logo")
+  .addEventListener("click", () => {
+    const ddown = document.querySelector(".profile-dropdown");
+    ddown.style.setProperty("animation-duration", "1s");
+    if (ddown.style.display === "flex") {
+      ddown.classList.remove("animate__animated", "animate__fadeIn");
+      ddown.style.display = "none";
+    } else {
+      ddown.classList.remove("animate__animated", "animate__fadeIn");
+      ddown.classList.add("animate__animated", "animate__fadeIn");
+      ddown.style.display = "flex";
+    }
+  });
+
 // Hovering effects for socials icons
 document.querySelectorAll(".socials-icon-bg").forEach(function (btn) {
   let img = btn.querySelector("img");
