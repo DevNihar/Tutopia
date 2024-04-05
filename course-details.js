@@ -1,5 +1,41 @@
-"use strict";
+("use strict");
 
+window.onload = function () {
+  var swiper = new Swiper(".carousel", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      // Settings for screens smaller than 768px
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      // Settings for screens 768px and larger
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      // Settings for screens 1200px and larger
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+};
 // Add fixed header when scrolling
 window.addEventListener("scroll", function () {
   let navbar = document.querySelector("body header");
