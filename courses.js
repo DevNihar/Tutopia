@@ -1,5 +1,121 @@
 "use strict";
 
+// Select the first 8 course elements
+const courseElements = document.querySelectorAll(".course-element");
+const initialCourseElements = Array.from(courseElements).slice(0, 8);
+const target = document.getElementById("all-courses");
+
+// Display the initial course elements
+initialCourseElements.forEach((element) => {
+  element.style.display = "flex";
+});
+const prevPageButton = document.getElementById("prevPage");
+const nextPageButton = document.getElementById("nextPage");
+const pageNumbersContainer = document.getElementById("pageNumbers");
+let currentPage = 1;
+const coursesPerPage = 8;
+
+function updatePagination() {
+  // Clear previous page numbers
+  pageNumbersContainer.innerHTML = "";
+
+  // Calculate the number of pages
+  const totalPages = Math.ceil(courseElements.length / coursesPerPage);
+
+  // Create page number buttons
+  for (let i = 1; i <= totalPages; i++) {
+    const pageButton = document.createElement("button");
+    pageButton.classList.add("page-button");
+    pageButton.textContent = i;
+    pageButton.addEventListener("click", () => {
+      target.scrollIntoView({ behavior: "smooth" });
+      showPage(i);
+    });
+    pageNumbersContainer.appendChild(pageButton);
+  }
+
+  // Enable/disable prev/next buttons
+  prevPageButton.disabled = currentPage === 1;
+  nextPageButton.disabled = currentPage === totalPages;
+}
+
+function showPage(pageNumber) {
+  currentPage = pageNumber;
+  const startIndex = (currentPage - 1) * coursesPerPage;
+  const endIndex = startIndex + coursesPerPage;
+
+  // Hide all course elements
+  courseElements.forEach((element) => {
+    element.style.display = "none";
+    element.classList.remove("animate__animated", "animate__fadeIn");
+  });
+
+  // Display the course elements for the current page
+  for (let i = startIndex; i < endIndex && i < courseElements.length; i++) {
+    courseElements[i].style.display = "flex";
+    courseElements[i].classList.add("animate__animated", "animate__fadeIn");
+  }
+
+  updatePagination();
+}
+
+prevPageButton.addEventListener("click", () => {
+  target.scrollIntoView({ behavior: "smooth" });
+  window.scrollTo({
+    top: window.scrollY - 500,
+    behavior: "smooth",
+  });
+  showPage(currentPage - 1);
+});
+
+nextPageButton.addEventListener("click", () => {
+  target.scrollIntoView({ behavior: "smooth" });
+  window.scrollTo({
+    top: window.scrollY - 500,
+    behavior: "smooth",
+  });
+  showPage(currentPage + 1);
+});
+
+// Initial page display
+showPage(1);
+
+function featuredSwiper() {
+  var swiper = new Swiper(".featured", {
+    slidesPerView: 1,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+}
+
+function instructorsSwiper() {
+  var swiper = new Swiper(".instructors", {
+    spaceBetween: 30,
+    slidesPerView: 4,
+    centeredSlides: false,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  featuredSwiper();
+  instructorsSwiper();
+});
+
 // Add fixed header when scrolling
 window.addEventListener("scroll", function () {
   let navbar = document.querySelector("body header");

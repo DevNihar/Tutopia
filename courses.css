@@ -311,46 +311,287 @@ header .profile .profile-dropdown span a:hover {
   letter-spacing: -0.016rem;
 }
 
-.categories-buttons {
+.top-section .popular {
+  margin-bottom: 100px;
+}
+
+.top-section .popular a {
+  color: #1b212f;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  border: 1px solid rgba(112, 112, 112, 0.2);
   display: inline-flex;
   flex-wrap: wrap;
-  justify-content: left;
-  padding: 20px 0;
-  width: 100%;
-  margin-top: 30px;
+  padding: 15px 30px;
+  border-radius: 30px;
+  margin-right: 8px;
+  margin-top: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
 }
 
-.categories-buttons .category-btn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 5px 5px;
-  color: #1b212f;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1;
-  border: 2px solid rgba(27, 33, 47, 0.08);
-  border-radius: 5px;
-  padding: 19px 48px;
-  transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0s;
-}
-
-.categories-buttons .category-btn:hover {
+.top-section .popular a:hover {
   cursor: pointer;
+  background-color: var(--orange1);
+  color: #ffffff;
 }
 
-.categories-buttons .category-btn img {
-  max-height: 44px;
-  max-width: 44px;
-  transition: all 0.2s ease-in 0s;
+.swiper-slide {
+  width: auto;
 }
 
-.categories-buttons .category-btn span {
-  color: #1b212f;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1;
-  margin: 0 20px;
+.top-section .featured .featured-wrapper {
+  padding: 70px;
+}
+
+.top-section .featured .featured-card {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  /* padding: 70px; */
+  box-sizing: border-box;
+  box-shadow: 5px 10px 60px rgba(27, 33, 47, 0.05);
+  /* border: 1px solid rgba(112, 112, 112, 0.2); */
+}
+
+.top-section .featured .featured-card .right {
+  margin-left: 30px;
+}
+
+.top-section .featured .featured-card .right h3 {
+  margin: 0;
+}
+
+.top-section .featured .featured-card .right p {
+  color: var(--text-light);
+}
+
+.top-section .featured .featured-card .right p:first-of-type {
+  width: 70%;
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.top-section .featured .featured-card .right p:nth-of-type(2),
+p:nth-of-type(3) {
+  font-size: 0.7rem;
+  margin: 5px 0;
+}
+
+.top-section .featured-card .right .rating {
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+}
+
+.top-section .featured-card .right .rating .stars {
+  display: inline-block;
+  margin: 0 7px;
+}
+
+.top-section .featured-card .right .price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: black;
+}
+
+.mid-section {
+  padding: 0 var(--margin-base);
+}
+
+.mid-section h3 {
+  margin-top: 60px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  letter-spacing: -0.016rem;
+}
+
+.mid-section .instructors .instructor-wrapper {
+  padding: 70px;
+  box-sizing: border-box;
+}
+
+.mid-section .instructors .instructor-slide {
+  display: flex;
+  align-items: flex-start;
+  /* padding: 10px; */
+  box-sizing: border-box;
+  width: 270px;
+  margin-right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 1px solid rgba(112, 112, 112, 0.2);
+}
+
+.mid-section .instructors .instructor-slide .instructor-image {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.mid-section .instructors .instructor-slide .instructor-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.mid-section .instructors .instructor-slide .instructor-details {
+  margin-left: 10px;
+}
+
+.mid-section .instructors .instructor-slide .instructor-details p {
+  margin: 0;
+}
+
+.mid-section
+  .instructors
+  .instructor-slide
+  .instructor-details
+  p:first-of-type {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.mid-section
+  .instructors
+  .instructor-slide
+  .instructor-details
+  .instructor-rating {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.mid-section
+  .instructors
+  .instructor-slide
+  .instructor-details
+  .instructor-rating
+  img {
+  margin: 0 2px;
+}
+
+.mid-section
+  .instructors
+  .instructor-slide
+  .instructor-details
+  p:nth-of-type(2),
+p:nth-of-type(3),
+p:nth-of-type(4) {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-light);
+  margin-top: 5px;
+}
+
+.course-section {
+  padding: 0 var(--margin-base);
+}
+
+.course-section h2 {
+  margin: 60px 0;
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 1.25;
+  letter-spacing: -0.016rem;
+}
+
+.course-section .course-list .course-element {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 20px 0;
+  /* box-shadow: 5px 10px 60px rgba(27, 33, 47, 0.05); */
+  border: 1px solid rgba(112, 112, 112, 0.2);
+}
+
+.course-section .course-list .course-element .left img {
+  width: 300px;
+  height: 175px;
+}
+
+.course-section .course-list .course-element .right {
+  /* position: relative; */
+  margin-left: 30px;
+}
+
+.course-section .course-list .course-element .right h3 {
+  margin: 0;
+}
+
+.course-section .course-list .course-element .right p {
+  color: var(--text-light);
+}
+
+.course-section .course-list .course-element .right p:first-of-type {
+  width: 70%;
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.course-section .course-list .course-element .right p:nth-of-type(2),
+p:nth-of-type(3) {
+  font-size: 0.7rem;
+  margin: 5px 0;
+}
+
+.course-section .course-element .right .rating {
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+}
+
+.course-section .course-element .right .rating .stars {
+  display: inline-block;
+  margin: 0 7px;
+}
+
+.course-section .course-element .price {
+  text-align: right;
+  width: 20%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: black;
+  margin-left: 190px;
+}
+
+.course-section .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.course-section .pagination #prevPage,
+#nextPage {
+  padding: 10px 40px;
+  background-color: white;
+  border: 1px solid rgba(112, 112, 112, 0.2);
+}
+
+.course-section .pagination #pageNumbers {
+  margin: 0 10px;
+}
+
+.course-section .pagination .page-button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  background-color: white;
+  border: 1px solid rgba(112, 112, 112, 0.2);
+}
+
+.course-section .pagination #prevPage:hover,
+.page-button:hover,
+#nextPage:hover {
+  cursor: pointer;
 }
 
 footer {
