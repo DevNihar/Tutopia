@@ -70,6 +70,7 @@ const renderCoursesOnHomepage = (courses) => {
   });
 };
 
+// Add fixed header when scrolling
 window.addEventListener("scroll", function () {
   let navbar = document.querySelector("body header");
   let headerHeight = document.querySelector("body header").offsetHeight;
@@ -90,6 +91,31 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// Switch signup-login buttons on header with profile
+document
+  .querySelector("header .profile .profile-logo")
+  .addEventListener("click", () => {
+    const ddown = document.querySelector(".profile-dropdown");
+    ddown.style.setProperty("animation-duration", "1s");
+    if (ddown.style.display === "flex") {
+      ddown.classList.remove("animate__animated", "animate__fadeIn");
+      ddown.style.display = "none";
+    } else {
+      ddown.classList.remove("animate__animated", "animate__fadeIn");
+      ddown.classList.add("animate__animated", "animate__fadeIn");
+      ddown.style.display = "flex";
+    }
+  });
+
+// Close modals when clicking outside
+window.onclick = function (event) {
+  if (event.target == document.querySelector(".profile-dropdown")) {
+    ddown.classList.remove("animate__animated", "animate__fadeIn");
+    ddown.style.display = "none";
+  }
+};
+
+// Change image as well as bg color when hovering over the categories buttons
 document.querySelectorAll(".category-btn").forEach(function (btn) {
   let img = btn.querySelector("img:first-of-type");
   let img2 = btn.querySelector("img:last-of-type");
@@ -112,6 +138,7 @@ document.querySelectorAll(".category-btn").forEach(function (btn) {
   });
 });
 
+// Hovering effects for socials icons
 document.querySelectorAll(".socials-icon-bg").forEach(function (btn) {
   let img = btn.querySelector("img");
   const imgName = img.id;
@@ -140,6 +167,7 @@ function isInViewport(element) {
   return rect.top <= viewportHeight;
 }
 
+// animation funciton for the number counting effect
 function animateValue(obj, start, end, duration, callback) {
   let startTimestamp = null;
   const step = (timestamp) => {
@@ -157,6 +185,7 @@ function animateValue(obj, start, end, duration, callback) {
   window.requestAnimationFrame(step);
 }
 
+// Driver function for number counting
 function numCounter(card) {
   const obj = document.querySelector(`${card} .counter`);
   let value = obj.innerHTML;
