@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UtF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutopia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="course-details.css" rel="stylesheet" />
+    <link rel="stylesheet" href="login-signup.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  <style>
+    :root {
+      --orange1: #ff723a;
+      --orange2: #e75115;
+      --star-gold: #ffc71d;
+      --text-light-grey: #707070;
+      --text-light: #505050;
+      --text-blue: #2878eb;
+      --bg-color: #fff6f3;
+      --profile-bg-color: rgba(123, 168, 238, 0.2);
+      --margin-base: 95px;
+      --font-base: Manrope;
+      --header-card-1-bg: #ffefe8;
+      --header-card-2-bg: #e0faf6;
+      --header-card-3-bg: #eeeaff;
+      --header-card-4-bg: #faf8e4;
+      --header-card-5-bg: #e8f9ff;
+      --header-card-6-bg: #ffeff1;
+      --header-card-7-bg: #f1f8e4;
+      --header-card-8-bg: #fbedff;
+      --play-button-color: #3b87e8;
+    }
+
+    body {
+      font-family: var(--font-base);
+      margin: 0;
+      background-color: #ffffff;
+    }
+
+    #filler {
+    display: none;
+    height: 6rem;
+    width: 100%;
+    background-color: white;
+    }
+
+    body .fixed-header {
+    position: fixed;
+    top: 0;
+    width: 95%;
+    background-color: white;
+    z-index: 4;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    header {
+    position: relative;
+    display: flex;
+    height: 6rem;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* z-index: 6; */
+    }
+
+    header .logo a {
+    text-decoration: none;
+    color: inherit;
+    font-family: Merriweather;
+    font-size: 2rem;
+    font-weight: 600;
+    }
+
+    header .logo a:hover {
+    color: inherit;
+    }
+
+    header .links {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    }
+
+    header .links a {
+    font-size: 20px;
+    color: #505050;
+    text-decoration: none;
+    margin-right: 20px;
+    }
+
+    header .links .cap {
+    display: inline-block;
+    transform: rotateZ(180deg);
+    font-size: 30px;
+    font-weight: 200;
+    }
+
+    header .all-categories .header-categories {
+    position: absolute;
+    width: 900px;
+    padding: 30px 30px 15px;
+    background-color: white;
+    top: 96px;
+    left: 380px;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    box-sizing: border-box;
+    transform: translateY(-20px);
+    transform-origin: top;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+
+    header .all-categories:hover .header-categories {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    }
+
+    header .header-categories .drp-dwn-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    /* height: 35px; */
+    padding: 14px 10px;
+    margin: 0 5px 15px 0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    }
+
+    header .header-categories .drp-dwn-card span img {
+    margin-right: 10px;
+    vertical-align: -2px;
+    }
+
+    header .header-categories .drp-dwn-card a p {
+    display: inline-block;
+    margin: 0;
+    }
+
+    header .header-categories .dd-card-1 {
+    background-color: var(--header-card-1-bg);
+    }
+
+    header .header-categories .dd-card-2 {
+    background-color: var(--header-card-2-bg);
+    }
+
+    header .header-categories .dd-card-3 {
+    background-color: var(--header-card-3-bg);
+    }
+
+    header .header-categories .dd-card-4 {
+    background-color: var(--header-card-4-bg);
+    }
+
+    header .header-categories .dd-card-5 {
+    background-color: var(--header-card-5-bg);
+    }
+
+    header .header-categories .dd-card-6 {
+    background-color: var(--header-card-6-bg);
+    }
+
+    header .header-categories .dd-card-7 {
+    background-color: var(--header-card-7-bg);
+    }
+
+    header .header-categories .dd-card-8 {
+    background-color: var(--header-card-8-bg);
+    }
+
+    header .profile {
+    position: relative;
+    width: 20%;
+    height: 50px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    }
+
+    header .profile .profile-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--profile-bg-color);
+    }
+
+    header .profile .profile-logo:hover {
+    cursor: pointer;
+    }
+
+    header .profile .profile-dropdown {
+    position: absolute;
+    top: 60px;
+    left: 220px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+    /* padding: 10px; */
+    border-radius: 10px;
+    /* width: 100px; */
+    background-color: white;
+    z-index: 6;
+    }
+
+    header .profile .profile-dropdown span {
+    display: inline-block;
+    /* margin: 5px 0; */
+    color: #505050;
+    padding: 5px 15px 5px 15px;
+    }
+
+    header .profile .profile-dropdown span:first-of-type {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    }
+
+    header .profile .profile-dropdown span:last-of-type {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    }
+
+    header .profile .profile-dropdown span:hover {
+    cursor: pointer;
+    /* text-decoration: underline 2px rgba(0, 0, 0, 0.5); */
+    background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    header .profile .profile-dropdown span a {
+    text-decoration: none;
+    color: inherit;
+    }
+
+    header .profile .profile-dropdown span a:hover {
+    color: inherit;
+    }
+
+
+    .course-edit-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .course-edit-container h1 {
+      text-align: center;
+      color: #1b212f;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 16px;
+      color: #1b212f;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: var(--font-base);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-group input[type="file"] {
+      border: none;
+      padding: 0;
+    }
+
+    .form-group .tags-input {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .form-group .tags-input input {
+      flex-grow: 1;
+      margin-right: 10px;
+    }
+
+    .form-group .tags-input button {
+      background-color: var(--orange1);
+      color: #fff;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-group .tags-input button:hover {
+      background-color: var(--orange2);
+    }
+
+    .form-group .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .form-group .tags-container span {
+      background-color: #f1f1f1;
+      color: #1b212f;
+      padding: 5px 10px;
+      border-radius: 20px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .form-group .tags-container span button {
+      background-color: transparent;
+      color: #1b212f;
+      border: none;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .form-actions button {
+      background-color: var(--orange1);
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-actions button:hover {
+      background-color: var(--orange2);
+    }
+    /* Footer */
+    footer {
+    height: 85vh;
+    background-color: var(--bg-color);
+    }
+
+    footer hr {
+    height: 1px;
+    background-color: var(--orange2);
+    border: none;
+    }
+
+    .foot-top {
+    height: 28%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 35px var(--margin-base);
+    }
+
+    .foot-top h2 {
+    font-family: var(--font-base);
+    font-size: 2.5rem;
+    margin: 0;
+    }
+
+    .foot-top .socials {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    }
+
+    .foot-top .socials .socials-icon-bg {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    border-radius: 50%;
+    object-fit: fill;
+    transition: background-color 0.2s ease-in 0s;
+    }
+
+    .foot-top .socials .socials-icon-bg:hover {
+    cursor: pointer;
+    }
+
+    .socials .socials-icon-bg img {
+    height: 18px;
+    width: 18px;
+    transition: all 0.2s ease-in 0s;
+    }
+
+    .foot-mid {
+    height: calc(100% - 28% - 17%);
+    display: flex;
+    padding: 0 var(--margin-base);
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-top: 0.1px solid rgba(255, 114, 58, 0.2);
+    border-bottom: 0.1px solid rgba(255, 114, 58, 0.2);
+    }
+
+    .foot-mid div {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 23px 30px;
+    }
+
+    .foot-mid div h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    }
+
+    .foot-mid .footer-cards {
+    transform: translateY(50px);
+    opacity: 0;
+    }
+
+    #subscribe-form {
+    width: 100%;
+    }
+
+    #subscribe-form input {
+    color: #000009;
+    display: block;
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    }
+
+    #subscribe-form button {
+    background-color: var(--orange1);
+    color: white;
+    font-size: 15px;
+    display: block;
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    /* padding-left: 20px;   */
+    margin-bottom: 20px;
+    transition: color, background-color 0.4s ease 0s;
+    }
+
+    #subscribe-form button:hover {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #ff4a02;
+    }
+
+    .foot-bottom {
+    font-size: 18px;
+    font-weight: 300;
+    height: 17%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--margin-base);
+    }
+
+    .foot-bottom .copyright {
+    width: 70%;
+    color: var(--text-light);
+    }
+
+    .foot-bottom .help {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+    <div id="filler"></div>
+    <header>
+      <div class="logo"><a href="homepage.html">Tutopia.</a></div>
+      <nav class="links">
+        <div class="all-categories">
+          <a href="#categories" id="link-1"
+            >All categories
+            <p class="cap">^</p>
+          </a>
+
+          <div class="header-categories">
+            <div class="drp-dwn-card dd-card-1">
+              <a>
+                <span>
+                  <img src="images/business.png" />
+                </span>
+                <p>Business</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-2">
+              <a>
+                <span>
+                  <img src="images/tv.png" />
+                </span>
+                <p>Technology</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-3">
+              <a>
+                <span>
+                  <img src="images/purp-plane.png" />
+                </span>
+                <p>Development</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-4">
+              <a>
+                <span>
+                  <img src="images/camera.png" />
+                </span>
+                <p>Photography</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-5">
+              <a>
+                <span>
+                  <img src="images/pie.png" />
+                </span>
+                <p>Digital Marketing</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-6">
+              <a>
+                <span>
+                  <img src="images/pen.png" />
+                </span>
+                <p>Programming</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-7">
+              <a>
+                <span>
+                  <img src="images/video.png" />
+                </span>
+                <p>Videography</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-8">
+              <a>
+                <span>
+                  <img src="images/tab.png" />
+                </span>
+                <p>Illustration</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="homepage.html"
+          >Home
+          <p class="cap">^</p></a
+        >
+        <a href="instructor.html"
+          >Instructors
+          <p class="cap">^</p></a
+        >
+        <a href="#contact"
+          >Contact
+          <p class="cap">^</p></a
+        >
+      </nav>
+
+      <div class="profile">
+        <span class="profile-logo">
+          <img src="images/profile.png" />
+        </span>
+        <div class="profile-dropdown">
+          <span><a href="ProfilePages/student-dashboard.html">Profile</a></span>
+          <span><a>Settings</a></span>
+          <span><a>Log-Out</a></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="course-edit-container">
+    <h1>Edit Course Details</h1>
+    <form id="course-edit-form">
+      <div class="form-group">
+        <label for="course-name">Course Name</label>
+        <input type="text" id="course-name" name="course-name" value="Fundamentals of Photography">
+      </div>
+      <div class="form-group">
+        <label for="video-upload">Upload Video</label>
+        <input type="file" id="video-upload" name="video-upload" accept="videos/*">
+      </div>
+      <div class="form-group">
+        <label for="course-long-desc">Course Long Description</label>
+        <textarea id="course-long-desc" name="course-long-desc">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolorum unde exercitationem molestiae voluptate nobis magni officiis aperiam voluptatem. Fuga, aliquam ratione. Ipsam, dolorem incidunt libero numquam nihil repudiandae laborum! Minus qui nisi quidem ex dolorum, officia distinctio harum. Harum in incidunt exercitationem earum, quas neque totam inventore eum voluptas ipsam repellendus facilis beatae provident blanditiis ab illum iusto quam?
+        </textarea>
+      </div>
+      <div class="form-group">
+        <label for="course-short-desc">Course Short Description</label>
+        <input type="text" id="course-short-desc" name="course-short-desc" value="Photography Learning A-Z">
+      </div>
+      <div class="form-group">
+        <label for="thumbnail-upload">Upload Thumbnail</label>
+        <input type="file" id="thumbnail-upload" name="thumbnail-upload" accept="image/*">
+      </div>
+      <div class="form-group">
+        <label>Tags</label>
+        <div class="tags-input">
+          <input type="text" id="course-tags" name="course-tags" placeholder="Add tags">
+          <button type="button" onclick="addTag()">Add</button>
+        </div>
+        <div class="tags-container" id="tags-container">
+          <span>Photography <button type="button" onclick="removeTag(this)">x</button></span>
+          <span>Outdoor <button type="button" onclick="removeTag(this)">x</button></span>
+          <span>Indoor Photography <button type="button" onclick="removeTag(this)">x</button></span>
+          <span>DSLR <button type="button" onclick="removeTag(this)">x</button></span>
+          <span>Creative <button type="button" onclick="removeTag(this)">x</button></span>
+          <span>Camera <button type="button" onclick="removeTag(this)">x</button></span>
+          <span>Professional <button type="button" onclick="removeTag(this)">x</button></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="course-price">Course Price</label>
+        <input type="number" id="course-price" name="course-price" value="2999">
+      </div>
+      <div class="form-group">
+        <label for="lecture-count">Number of Lectures</label>
+        <input type="number" id="lecture-count" name="lecture-count" value="25">
+      </div>
+      <div class="form-actions">
+        <button type="submit">Save Changes</button>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    <div class="foot-top">
+      <h2>Tutopia.</h2>
+      <div class="socials">
+        <span class="socials-icon-bg"
+          ><img id="facebook" src="images/facebook.png"
+        /></span>
+        <span class="socials-icon-bg"
+          ><img id="twitter" src="images/twitter.png"
+        /></span>
+        <span class="socials-icon-bg"
+          ><img id="linkedin" src="images/linkedin.png"
+        /></span>
+        <span class="socials-icon-bg"
+          ><img id="google-plus" src="images/google-plus.png"
+        /></span>
+      </div>
+    </div>
+    <!-- <hr /> -->
+    <div class="foot-mid">
+      <div class="about-us footer-cards">
+        <h3>About Us</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore amet
+          numquam magnam.
+        </p>
+        <p>tutopia@edu.ac.in</p>
+        <p>+00 235 695 58 , +0239564</p>
+      </div>
+      <div class="contact-us footer-cards">
+        <h3>Contact Us</h3>
+        <p>tutopia@edu.ac.in</p>
+        <p>+00 235 695 58</p>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p>
+      </div>
+      <div class="quick-links footer-cards">
+        <h3>Quick Links</h3>
+        <p>About Us</p>
+        <p>Explore pages</p>
+        <p>Our Services</p>
+        <p>Destinations</p>
+      </div>
+      <div class="subscribe footer-cards">
+        <h3>Subscribe Now</h3>
+        <form id="subscribe-form">
+          <input type="text" placeholder="Email Here" name="subscribe-form" />
+          <button>SUBSCRIBE NOW</button>
+        </form>
+      </div>
+    </div>
+    <!-- <hr /> -->
+    <div class="foot-bottom">
+      <div class="copyright">
+        Copyright@2024 Tutopia. All Rights Reserved.
+      </div>
+      <div class="help">
+        <a>Help</a>
+        <a>Privacy Policy</a>
+        <a>Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="course-details.js"></script>
+
+  <script>
+    function addTag() {
+      const tagInput = document.getElementById('course-tags');
+      const tagValue = tagInput.value.trim();
+      if (tagValue !== '') {
+        const tagsContainer = document.getElementById('tags-container');
+        const tagElement = document.createElement('span');
+        tagElement.textContent = tagValue;
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'x';
+        removeButton.type = 'button';
+        removeButton.onclick = function() {
+          removeTag(this.parentElement);
+        };
+        tagElement.appendChild(removeButton);
+        tagsContainer.appendChild(tagElement);
+        tagInput.value = '';
+      }
+    }
+
+    function removeTag(tagElement) {
+      tagElement.remove();
+    }
+  </script>
+</body>
+</html>
