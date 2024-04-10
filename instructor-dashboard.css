@@ -311,13 +311,16 @@ main .dashboard-left .bottom .selected {
   color: white;
 }
 
+main .dashboard-right {
+  width: 80%;
+}
+
 main .dashboard-right .section-heading {
   width: 100%;
-  display: block;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
   border-left: var(--border-thin);
   box-sizing: content-box;
 }
@@ -332,14 +335,89 @@ main .dashboard-right .section-heading p {
 }
 
 main .dashboard-right .section-content {
-  width: 100%;
   padding: 150px;
-  border: var(--border-thin);
+  border-top: var(--border-thin);
+  border-left: var(--border-thin);
+}
+
+main .dashboard-right .section-content .name {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+main .dashboard-right .section-content .name .name-first,
+.name-last {
+  width: 45%;
+}
+
+main .dashboard-right .section-content #about {
+  height: 200px;
 }
 
 main .dashboard-right .section-content form input {
   display: block;
   width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: var(--border-thin);
+}
+
+main .dashboard-right .section-content .links-box {
+  margin-top: 150px;
+}
+
+main .dashboard-right .section-content .save-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+main .dashboard-right .section-content .btn-save {
+  /* margin-top: 150px; */
+  background-color: white;
+  color: var(--text-light-grey);
+  border: var(--border-thin);
+  width: 20%;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+main .dashboard-right .section-content .btn-save:hover {
+  cursor: pointer;
+  background-color: var(--orange1);
+  color: white;
+}
+
+main .dashboard-right .section-content .profile-picture-box {
+  width: 100%;
+  /* display: flex;
+  justify-content: center; */
+}
+
+main .dashboard-right .section-content .profile-picture-box form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .dashboard-right .section-content .ppicture-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 200px;
+  border: var(--border-thin);
+  color: var(--text-light-grey);
+}
+
+main .dashboard-right .section-content .profile-picture-box #ppicture {
+  width: 40%;
+  color: var(--text-light-grey);
 }
 
 /* Footer */

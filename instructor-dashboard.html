@@ -164,48 +164,72 @@
         <div class="section-content">
           <div class="profile-box">
             <form action="">
-              <label for="first-name">First Name</label>
-              <input type="text" id="first-name" name="first-name" required />
-              <label for="last-name">Last Name</label>
-              <input type="text" id="last-name" name="last-name" required />
+              <div class="name">
+                <div class="name-first">
+                  <label for="first-name">First Name</label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    name="first-name"
+                    required
+                  />
+                </div>
+                <div class="name-last">
+                  <label for="last-name">Last Name</label>
+                  <input type="text" id="last-name" name="last-name" required />
+                </div>
+              </div>
               <label for="title">Title</label>
               <input type="text" id="title" name="title" />
               <label for="language">Language</label>
               <input type="text" id="language" name="language" />
               <label for="about">Describe Yourself</label>
               <input type="text" id="about" name="about" />
-              <label for="links">links</label>
-              <input
-                type="text"
-                class="links"
-                name="links"
-                placeholder="Website (http(s)://)"
-              />
-              <input
-                type="text"
-                class="links"
-                name="links"
-                placeholder="http://twitter.com/{ Twitter Profile }"
-              />
-              <input
-                type="text"
-                class="links"
-                name="links"
-                placeholder="http://facebook.com/{ Facebook Profile }"
-              />
-              <input
-                type="text"
-                class="links"
-                name="links"
-                placeholder="http://linkedin.com/{ LinkedIn Profile }"
-              />
-              <input
-                type="text"
-                class="links"
-                name="links"
-                placeholder="http://youtube.com/{ Youtube Profile }"
-              />
-              <input type="submit" class="btn-save" value="Save" />
+              <div class="links-box">
+                <label for="links">Links</label>
+                <input
+                  type="text"
+                  class="links"
+                  name="links"
+                  placeholder="Website (http(s)://)"
+                />
+                <input
+                  type="text"
+                  class="links"
+                  name="links"
+                  placeholder="http://twitter.com/{ Twitter Profile }"
+                />
+                <input
+                  type="text"
+                  class="links"
+                  name="links"
+                  placeholder="http://facebook.com/{ Facebook Profile }"
+                />
+                <input
+                  type="text"
+                  class="links"
+                  name="links"
+                  placeholder="http://linkedin.com/{ LinkedIn Profile }"
+                />
+                <input
+                  type="text"
+                  class="links"
+                  name="links"
+                  placeholder="http://youtube.com/{ Youtube Profile }"
+                />
+              </div>
+              <div class="save-box">
+                <input type="submit" class="btn-save" value="Save" />
+              </div>
+            </form>
+          </div>
+          <div class="profile-picture-box">
+            <form action="">
+              <div class="ppicture-preview">Preview</div>
+              <input type="file" id="ppicture" name="ppicture" />
+              <div class="save-box">
+                <input type="submit" class="btn-save" value="Save" />
+              </div>
             </form>
           </div>
         </div>
