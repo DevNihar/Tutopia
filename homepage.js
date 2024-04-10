@@ -155,10 +155,6 @@ document.querySelectorAll(".socials-icon-bg").forEach(function (btn) {
   });
 });
 
-// document.querySelectorAll(".reg-img").forEach(function (img) {
-//   img.addEventListener()
-// });
-
 // Function to check if an element is in the viewport
 function isInViewport(element) {
   let rect = element.getBoundingClientRect();

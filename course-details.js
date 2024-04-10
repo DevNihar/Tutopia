@@ -1,6 +1,7 @@
 ("use strict");
 
 window.onload = function () {
+  fetchCourseData();
   var swiper = new Swiper(".carousel", {
     slidesPerView: 3,
     spaceBetween: 30,
@@ -36,6 +37,56 @@ window.onload = function () {
     },
   });
 };
+
+const fetchCourseData = () => {
+  fetch("http://localhost:3000/api/courses")
+    .then((response) => response.json())
+    .then((courses) => {
+      // Use the courses array to render the course cards on your homepage
+      renderCoursesOnpage(courses);
+    })
+    .catch((error) => {
+      console.error("Error fetching course data:", error);
+    });
+};
+
+const renderCoursesOnpage = (courses) => {
+  console.log(courses);
+  const coursesCards = document.querySelectorAll(".card");
+
+  coursesCards.forEach((card, index) => {
+    const feedbackTag = card.querySelector(".feedback-tag");
+    feedbackTag.innerHTML = `${courses[index].rating}<img src="images/star.png" />(${courses[index].no_of_people_rated})`;
+
+    // Update course type
+    const typeTag = card.querySelector(".tag-section span");
+    typeTag.textContent = courses[index].type;
+
+    // Update course name
+    const subtitle = card.querySelector(".title-section a");
+    subtitle.textContent = courses[index].name;
+
+    // Update course duration
+    const courseDuration = card.querySelector(".period");
+    courseDuration.innerHTML = `<img src="images/time.svg" /> ${courses[index].duration.hours} Hours`;
+
+    // Update course difficulty level
+    const courseDifficulty = card.querySelector(".difficulty");
+    const difficulty = courses[index].difficulty_level;
+    if (difficulty === "Easy") {
+      courseDifficulty.innerHTML = `<img src="images/easy.png" /> ${difficulty}`;
+    } else if (difficulty === "Intermediate") {
+      courseDifficulty.innerHTML = `<img src="images/medium.png" /> ${difficulty}`;
+    } else {
+      courseDifficulty.innerHTML = `<img src="images/hard.png" /> ${difficulty}`;
+    }
+
+    // Update course short description
+    const subSubTitle = card.querySelector(".short-description");
+    subSubTitle.textContent = courses[index].short_description;
+  });
+};
+
 // Add fixed header when scrolling
 window.addEventListener("scroll", function () {
   let navbar = document.querySelector("body header");

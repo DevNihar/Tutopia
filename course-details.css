@@ -682,6 +682,10 @@ header .profile .profile-dropdown span a:hover {
   color: inherit;
 }
 
+.more-courses .card .title-section .short-description {
+  color: var(--text-light);
+}
+
 .more-courses .card .title-section .difficulty-box {
   display: flex;
   width: 90%;
