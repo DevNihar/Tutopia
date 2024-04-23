@@ -143,6 +143,15 @@ header .header-categories .drp-dwn-card span img {
   vertical-align: -2px;
 }
 
+header .header-categories .drp-dwn-card:hover {
+  cursor: pointer;
+}
+
+header .header-categories .drp-dwn-card:hover span img {
+  animation: heartBeat;
+  animation-duration: 1s;
+}
+
 header .header-categories .dd-card-1 {
   background-color: var(--header-card-1-bg);
 }

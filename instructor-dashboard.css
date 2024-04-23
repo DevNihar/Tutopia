@@ -313,6 +313,7 @@ main .dashboard-left .bottom .selected {
 
 main .dashboard-right {
   width: 80%;
+  overflow: hidden;
 }
 
 main .dashboard-right .section-heading {
@@ -335,28 +336,33 @@ main .dashboard-right .section-heading p {
 }
 
 main .dashboard-right .section-content {
-  padding: 150px;
+  /* padding: 150px; */
   border-top: var(--border-thin);
   border-left: var(--border-thin);
 }
 
-main .dashboard-right .section-content .name {
+main .dashboard-right .section-content .profile-details-box {
+  display: none;
+  margin: 150px;
+}
+
+main .dashboard-right .section-content .profile-details-box .name {
   width: 100%;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
 }
 
-main .dashboard-right .section-content .name .name-first,
+main .dashboard-right .section-content .profile-details-box .name .name-first,
 .name-last {
   width: 45%;
 }
 
-main .dashboard-right .section-content #about {
+main .dashboard-right .section-content .profile-details-box #about {
   height: 200px;
 }
 
-main .dashboard-right .section-content form input {
+main .dashboard-right .section-content .profile-details-box form input {
   display: block;
   width: 100%;
   height: 40px;
@@ -365,7 +371,7 @@ main .dashboard-right .section-content form input {
   border: var(--border-thin);
 }
 
-main .dashboard-right .section-content .links-box {
+main .dashboard-right .section-content .profile-details-box .links-box {
   margin-top: 150px;
 }
 
@@ -375,49 +381,199 @@ main .dashboard-right .section-content .save-box {
   justify-content: center;
 }
 
-main .dashboard-right .section-content .btn-save {
-  /* margin-top: 150px; */
-  background-color: white;
-  color: var(--text-light-grey);
-  border: var(--border-thin);
-  width: 20%;
+main .dashboard-right .section-content .profile-picture-box {
+  display: none;
+  width: 100%;
+  padding: 60px 70px;
+}
+
+main .dashboard-right .section-content .profile-picture-box label {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+  font-size: 1rem;
+  /* margin-bottom: 40px; */
+}
+
+main .section-content .profile-picture-box .image-preview-box {
+  width: 50%;
+  height: 250px;
+  border: 1px solid black;
+  margin: 20px 0;
+}
+
+main
+  .section-content
+  .profile-picture-box
+  .image-preview-box
+  .preview-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .section-content .profile-picture-box .file-upload-box {
+  width: 50%;
+  border: 1px solid black;
+  position: relative;
+}
+
+main .section-content .profile-picture-box .file-upload-box #img-upload {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+main .section-content .profile-picture-box #fake-selector {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* padding: 10px 20px; */
+  box-sizing: border-box;
+}
+
+main .section-content .profile-picture-box #fake-selector span {
+  display: inline-block;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+main .section-content .profile-picture-box #fake-selector span:first-of-type {
+  width: 69%;
+  border-right: 1px solid black;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+main .section-content .profile-picture-box #fake-selector span:last-of-type {
+  width: 30%;
+}
+
+main .section-content .profile-picture-box #fake-selector span:hover {
+  cursor: pointer;
+}
+
+main .section-content .save-button {
+  width: 10%;
+  background-color: var(--orange1);
+  padding: 10px;
+  margin-top: 30px;
   transition: background-color 0.3s ease;
+}
+
+main .section-content .save-button:hover,
+.btn-save:hover {
+  cursor: pointer;
+  background-color: var(--orange2);
+}
+
+main .section-content .save-button .btn-save {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
   font-size: 1rem;
 }
 
-main .dashboard-right .section-content .btn-save:hover {
-  cursor: pointer;
+main .dashboard-right .section-content .courses-box {
+  padding: 30px;
+}
+
+main .dashboard-right .section-content .courses-box .course-element {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  margin: 20px 0;
+}
+
+main
+  .dashboard-right
+  .section-content
+  .courses-box
+  .course-element
+  .course-image {
+  width: 15%;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+main
+  .dashboard-right
+  .section-content
+  .courses-box
+  .course-element
+  .course-image
+  img {
+  width: 100%;
+}
+
+main
+  .dashboard-right
+  .section-content
+  .courses-box
+  .course-element
+  a:first-of-type {
+  display: inline-block;
+  width: 60%;
+  color: black;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: color 0.1s ease;
+}
+
+main
+  .dashboard-right
+  .section-content
+  .courses-box
+  .course-element
+  a:first-of-type:hover {
+  color: var(--orange1);
+}
+
+main
+  .dashboard-right
+  .section-content
+  .courses-box
+  .course-element
+  a:nth-of-type(2),
+main
+  .dashboard-right
+  .section-content
+  .courses-box
+  .course-element
+  a:last-of-type {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  width: 20%;
+  border: 1px solid black;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 10px;
+  transition: background-color 0.2s ease;
+}
+
+main
+  .dashboard-right
+  .section-content
+  .courses-box
+  .course-element
+  a:nth-of-type(2):hover,
+main
+  .dashboard-right
+  .section-content
+  .courses-box
+  .course-element
+  a:last-of-type:hover {
   background-color: var(--orange1);
+  border: none;
   color: white;
-}
-
-main .dashboard-right .section-content .profile-picture-box {
-  width: 100%;
-  /* display: flex;
-  justify-content: center; */
-}
-
-main .dashboard-right .section-content .profile-picture-box form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-main .dashboard-right .section-content .ppicture-preview {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  height: 200px;
-  border: var(--border-thin);
-  color: var(--text-light-grey);
-}
-
-main .dashboard-right .section-content .profile-picture-box #ppicture {
-  width: 40%;
-  color: var(--text-light-grey);
 }
 
 /* Footer */

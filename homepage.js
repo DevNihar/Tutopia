@@ -21,6 +21,8 @@ const renderCoursesOnHomepage = (courses) => {
   const coursesCards = document.querySelectorAll(".course-card");
 
   coursesCards.forEach((card, index) => {
+    // card.id = courses[index].course_id;
+    // console.log(courses[index]);
     const feedbackTag = card.querySelector(".feedback-tag");
     feedbackTag.innerHTML = `${courses[index].rating}<img src="images/star.png" />(${courses[index].no_of_people_rated})`;
 
@@ -35,6 +37,10 @@ const renderCoursesOnHomepage = (courses) => {
     // Update course name
     const subtitle = card.querySelector(".subtitle a");
     subtitle.textContent = courses[index].name;
+    subtitle.setAttribute(
+      "href",
+      `course-details.html?courseId=${courses[index].course_id}`
+    );
 
     // Update course duration
     const courseDuration = card.querySelector(".course_duration");
@@ -69,6 +75,15 @@ const renderCoursesOnHomepage = (courses) => {
     studentsTaught.textContent = `${teacher.students_taught}+`;
   });
 };
+
+// document
+//   .getElementById("search-form")
+//   .addEventListener("submit", function (event) {
+//     event.preventDefault();
+//     let searchQuery = document
+//       .getElementById("search-input")
+//       .value.toLowerCase();
+//   });
 
 // Add fixed header when scrolling
 window.addEventListener("scroll", function () {

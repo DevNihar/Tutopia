@@ -39,6 +39,18 @@ window.onload = function () {
 };
 
 const fetchCourseData = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const courseId = urlParams.get("courseId");
+  console.log("Course ID:", courseId);
+  fetch(`http://localhost:3000/api/courses/${courseId}`)
+    .then((response) => response.json())
+    .then((course) => {
+      renderCourseDetails(course);
+    })
+    .catch((error) => {
+      console.error("Error fecthing course data", error);
+    });
+
   fetch("http://localhost:3000/api/courses")
     .then((response) => response.json())
     .then((courses) => {
@@ -48,6 +60,65 @@ const fetchCourseData = () => {
     .catch((error) => {
       console.error("Error fetching course data:", error);
     });
+};
+
+const renderCourseDetails = (course) => {
+  console.log(course);
+  document.querySelectorAll(".course-name").forEach((element) => {
+    element.textContent = course.name;
+  });
+  document.querySelectorAll(".teacher-name").forEach((element) => {
+    element.textContent =
+      course.teacher.first_name + " " + course.teacher.last_name;
+  });
+  document.querySelector(".course-price").textContent = "Rs." + course.price;
+  document.querySelector(".course-info").textContent = course.long_description;
+  document.querySelector(".teacher-info").textContent =
+    course.teacher.background;
+  document.querySelector(".teacher-title").textContent = course.teacher.title;
+  document.querySelector(
+    ".num_lessions_duration"
+  ).textContent = `${course.num_of_lectures} Lessons (${course.duration.hours}h)`;
+  document.querySelector(".more-from").textContent =
+    "More From " + course.teacher.first_name + " " + course.teacher.last_name;
+
+  const videoListContainer = document.querySelector(".video-list");
+
+  const lectureData = course.lectures;
+
+  // Loop through the lecture data and create the vid-list-element divs
+  lectureData.forEach((lecture) => {
+    // Create the outer div element
+    const vidListElement = document.createElement("div");
+    vidListElement.classList.add("vid-list-element");
+
+    // Create the inner div element
+    const vleLeft = document.createElement("div");
+    vleLeft.classList.add("vle-left");
+
+    // Create the image element
+    const img = document.createElement("img");
+    img.src = "images/video-player.png";
+
+    // Create the anchor element
+    const anchor = document.createElement("a");
+    anchor.classList.add("course-lecture-name");
+    anchor.textContent = lecture.name;
+
+    // Create the duration paragraph element
+    const durationParagraph = document.createElement("p");
+    durationParagraph.classList.add("course-lecture-duration");
+    durationParagraph.textContent = lecture.duration.hours + " mins";
+
+    // Append the child elements to their respective parent elements
+    vleLeft.appendChild(img);
+    vleLeft.appendChild(anchor);
+    vidListElement.appendChild(vleLeft);
+    vidListElement.appendChild(durationParagraph);
+
+    // Append the vid-list-element div to the video-list container
+    videoListContainer.appendChild(vidListElement);
+  });
 };
 
 const renderCoursesOnpage = (courses) => {

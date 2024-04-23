@@ -18,6 +18,89 @@ const pool = new Pool({
 
 app.use(express.json());
 
+// app.get("/search", async (req, res) => {
+//   const searchItem = req.query.q;
+//   pool.query("SELECT * FROM courses", async (err, courseResult) => {
+//     if (err) {
+//       console.error("Error executing query", err.stack);
+//       return res.status(500).json({ error: "Something went wrong" });
+//     }
+
+//     // Map the results to an array of course objects with teacher details
+//     const courses = await Promise.all(
+//       courseResult.rows.map(async (row) => {
+//         const teacherResult = await pool.query(
+//           "SELECT * FROM teachers WHERE teacher_id = $1",
+//           [row.teacher_id]
+//         );
+
+//         const teacher = teacherResult.rows[0];
+//         return {
+//           course_id: row.course_id,
+//           difficulty_level: row.difficulty_level,
+//           duration: row.duration,
+//           short_description: row.short_description,
+//           long_description: row.long_description,
+//           name: row.name,
+//           rating: row.rating,
+//           no_of_people_rated: row.no_of_people_rated,
+//           num_lectures: row.num_of_lectures,
+//           type: row.type,
+//           price: row.price,
+//           teacher: {
+//             teacher_id: teacher.teacher_id,
+//             first_name: teacher.first_name,
+//             last_name: teacher.last_name,
+//             email: teacher.email,
+//             title: teacher.title,
+//             students_taught: teacher.students_taught,
+//           },
+//         };
+//       })
+//     );
+
+//     // console.log("Response headers:", res.getHeaders());
+//     res.json(courses);
+//   });
+// });
+
+app.get("/api/courses/:id", async (req, res) => {
+  // console.log("ID Called");
+  const searchId = req.params.id;
+  console.log("the search id is " + searchId);
+  try {
+    const courseResult = await pool.query(
+      "SELECT * FROM courses WHERE course_id = $1",
+      [searchId]
+    );
+    const course = courseResult.rows[0];
+    // console.log("Course:", course);
+
+    const teacherResult = await pool.query(
+      "SELECT * FROM teachers WHERE teacher_id=$1",
+      [course.teacher_id]
+    );
+    const teacher = teacherResult.rows[0];
+    console.log(teacher);
+    course.teacher = teacher;
+
+    const lectureResult = await pool.query(
+      "SELECT * FROM lecture WHERE owner_course = $1",
+      [searchId]
+    );
+    const lectures = lectureResult.rows;
+    // console.log("The lectures are:", lectures);
+
+    // Add lectures to the course object
+    course.lectures = lectures;
+    // console.log("Course:", course);
+    res.json(course);
+  } catch (error) {
+    console.error("Error executing query", error.stack);
+    return res.status(500).json({ error: "Something went wrong" });
+  }
+});
+
 // NEED TO BE FIXED!!!
 // Getting All courses from the courses table
 // Currently bugged as it will get all the courses from the table
@@ -37,6 +120,14 @@ app.get("/api/courses", (req, res) => {
         );
 
         const teacher = teacherResult.rows[0];
+        // console.log(teacher);
+
+        // const lectureResult = await pool.query(
+        //   "SELECT * FROM lecture WHERE owner_course = $1",
+        //   [row.course_id]
+        // );
+        // const lectures = lectureResult.rows[0];
+        // console.log(lectures);
 
         return {
           course_id: row.course_id,
@@ -47,6 +138,7 @@ app.get("/api/courses", (req, res) => {
           name: row.name,
           rating: row.rating,
           no_of_people_rated: row.no_of_people_rated,
+          num_lectures: row.num_of_lectures,
           type: row.type,
           price: row.price,
           teacher: {
