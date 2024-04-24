@@ -18,6 +18,19 @@ const pool = new Pool({
 
 app.use(express.json());
 
+app.get("/api/instructors", async (req, res) => {
+  try {
+    const query = "SELECT * FROM popular_teachers";
+    const result = await pool.query(query);
+    const instructors = result.rows;
+    console.log(instructors);
+    res.json(instructors);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error fetching instructors");
+  }
+});
+
 // app.get("/search", async (req, res) => {
 //   const searchItem = req.query.q;
 //   pool.query("SELECT * FROM courses", async (err, courseResult) => {

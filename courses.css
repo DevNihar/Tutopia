@@ -524,6 +524,7 @@ p:nth-of-type(3) {
   margin: 20px 0;
   /* box-shadow: 5px 10px 60px rgba(27, 33, 47, 0.05); */
   border: 1px solid rgba(112, 112, 112, 0.2);
+  position: relative;
 }
 
 .course-section .course-list .course-element .left img {
@@ -574,6 +575,9 @@ p:nth-of-type(3) {
   font-weight: 700;
   color: black;
   margin-left: 190px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .course-section .pagination {

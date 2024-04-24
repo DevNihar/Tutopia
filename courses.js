@@ -1,4 +1,153 @@
 "use strict";
+const urlParams = new URLSearchParams(window.location.search);
+const category = urlParams.get("category");
+console.log(category);
+window.onload = function () {
+  fetchPageData();
+  updatePageData();
+};
+
+function fetchPageData() {
+  fetch("http://localhost:3000/api/instructors")
+    .then((response) => response.json())
+    .then((instructors) => {
+      // Generate instructor slides with the fetched data
+      generateInstructorSlides(instructors);
+    })
+    .catch((error) => console.error("Error fetching instructors:", error));
+
+  fetch("http://localhost:3000/api/courses")
+    .then((response) => response.json())
+    .then((courses) => {
+      // Generate instructor slides with the fetched data
+      console.log(courses);
+      generateCourseList(courses);
+    })
+    .catch((error) => console.error("Error fetching instructors:", error));
+}
+
+function updatePageData() {
+  const heading1 = document.getElementById("main-heading");
+  heading1.textContent = category + " Courses";
+
+  const heading2 = document.getElementById("all-courses");
+  heading2.textContent = "All " + category + " Courses";
+}
+
+function generateCourseList(courses) {
+  const courseList = document.querySelector(".course-list");
+
+  courses.forEach((course) => {
+    const courseElement = document.createElement("div");
+    courseElement.classList.add("course-element");
+
+    const leftDiv = document.createElement("div");
+    leftDiv.classList.add("left");
+    const courseImage = document.createElement("img");
+    courseImage.src = "images/07.png";
+    leftDiv.appendChild(courseImage);
+
+    const rightDiv = document.createElement("div");
+    rightDiv.classList.add("right");
+
+    const courseInfo = document.createElement("div");
+    courseInfo.classList.add("course-info");
+
+    const courseTitle = document.createElement("h3");
+    courseTitle.textContent = course.name;
+    courseInfo.appendChild(courseTitle);
+
+    const courseDescription = document.createElement("p");
+    courseDescription.textContent = course.short_description;
+    courseInfo.appendChild(courseDescription);
+
+    const ratingDiv = document.createElement("div");
+    ratingDiv.classList.add("rating");
+    ratingDiv.textContent = `${course.rating} `;
+
+    const starsDiv = document.createElement("div");
+    starsDiv.classList.add("stars");
+    for (let i = 0; i < course.rating; i++) {
+      const starImage = document.createElement("img");
+      starImage.src = "images/star.png";
+      starsDiv.appendChild(starImage);
+    }
+    ratingDiv.appendChild(starsDiv);
+
+    const ratingsCount = document.createElement("span");
+    ratingsCount.textContent = ` (${course.no_of_people_rated})`;
+    ratingDiv.appendChild(ratingsCount);
+    courseInfo.appendChild(ratingDiv);
+
+    const instructorInfo = document.createElement("p");
+    instructorInfo.textContent = `By ${course.teacher.first_name} ${course.teacher.last_name} - ${course.teacher.students_taught} students - Worldwide`;
+    courseInfo.appendChild(instructorInfo);
+
+    const courseDetails = document.createElement("p");
+    courseDetails.textContent = `${course.duration.hours} hours - ${course.num_lectures} Lectures - ${course.difficulty_level}`;
+    courseInfo.appendChild(courseDetails);
+
+    rightDiv.appendChild(courseInfo);
+
+    const priceDiv = document.createElement("div");
+    priceDiv.classList.add("price");
+    priceDiv.textContent = `Rs. ${course.price}`;
+
+    courseElement.appendChild(leftDiv);
+    courseElement.appendChild(rightDiv);
+    courseElement.appendChild(priceDiv);
+
+    courseList.appendChild(courseElement);
+  });
+}
+
+function generateInstructorSlides(instructors) {
+  const instructorWrapper = document.querySelector(".instructor-wrapper");
+
+  instructors.forEach((instructor) => {
+    const instructorSlide = document.createElement("div");
+    instructorSlide.classList.add("swiper-slide", "instructor-slide");
+
+    const instructorImage = document.createElement("div");
+    instructorImage.classList.add("instructor-image");
+    const image = document.createElement("img");
+    image.src = "images/instructor-profile.jpg";
+    instructorImage.appendChild(image);
+
+    const instructorDetails = document.createElement("div");
+    instructorDetails.classList.add("instructor-details");
+
+    const instructorLink = document.createElement("a");
+    instructorLink.href = "instructor-dashboard.html";
+    instructorLink.textContent = instructor.name;
+    instructorDetails.appendChild(instructorLink);
+
+    const instructorRating = document.createElement("div");
+    instructorRating.classList.add("instructor-rating");
+    instructorRating.innerHTML = `
+        <strong>4</strong>
+        <img src="images/star.png" />
+        Instructor Rating
+      `;
+    instructorDetails.appendChild(instructorRating);
+
+    const subjectLine = document.createElement("p");
+    subjectLine.textContent = "Python, Data Science";
+    instructorDetails.appendChild(subjectLine);
+
+    const studentsLine = document.createElement("p");
+    studentsLine.innerHTML = `<strong>${instructor.students_taught}</strong> Students`;
+    instructorDetails.appendChild(studentsLine);
+
+    const coursesLine = document.createElement("p");
+    coursesLine.innerHTML = `<strong>${instructor.num_courses}</strong> courses`;
+    instructorDetails.appendChild(coursesLine);
+
+    instructorSlide.appendChild(instructorImage);
+    instructorSlide.appendChild(instructorDetails);
+    instructorWrapper.appendChild(instructorSlide);
+  });
+}
 
 // Select the first 8 course elements
 const courseElements = document.querySelectorAll(".course-element");

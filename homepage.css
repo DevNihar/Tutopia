@@ -706,6 +706,11 @@ p {
   transition: all 0.2s ease-in 0s;
 }
 
+.categories-buttons .category-btn a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .categories-buttons .category-btn span {
   color: #1b212f;
   font-size: 20px;
