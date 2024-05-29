@@ -126,7 +126,7 @@ loginForm.addEventListener("submit", async function (event) {
 
 signupForm.addEventListener("submit", async function (event) {
   event.preventDefault(); // Prevent form submission
-  const pattern = signupForm.querySelector("#signupForm #pass-pattern");
+  // const pattern = signupForm.querySelector("#signupForm #pass-pattern");
   const firstName = signupForm.querySelector("#first_name").value;
   console.log(firstName);
   const lastName = signupForm.querySelector("#last_name").value;
@@ -158,15 +158,13 @@ signupForm.addEventListener("submit", async function (event) {
     if (response.ok) {
       // If response status is OK (2xx), assume successful registration
       console.log("User registered successfully");
-      pattern.style.display = "none";
-      closeModal(signupModal);
-      openModal(loginModal);
+      // pattern.style.display = "none";
+      // closeModal(signupModal);
+      // openModal(loginModal);
     } else {
       // If response status is not OK, handle error
       console.error("Failed to register user:", await response.text());
-      pattern.style.display = "none";
+      // pattern.style.display = "none";
     }
-  } else {
-    pattern.style.display = "block";
   }
 });
