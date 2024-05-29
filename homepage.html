@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UtF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
+    <title>Tutopia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,66 +13,305 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
       href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link href="homepage.css" rel="stylesheet" />
+    <link rel="stylesheet" href="login-signup.css" />
   </head>
   <body>
+    <div id="modal-blur"></div>
+    <div id="filler"></div>
     <header>
-      <div class="logo">Tutopia.</div>
+      <div class="logo"><a href="homepage.html">Tutopia.</a></div>
       <nav class="links">
-        <a href="#categories">All Categories</a>
-        <a href="homepage.html">Home</a>
-        <a>Pages</a>
-        <a href="#contact">Contact</a>
+        <div class="all-categories">
+          <a href="#categories" id="link-1"
+            >All categories
+            <p class="cap">^</p>
+          </a>
+
+          <div class="header-categories">
+            <div class="drp-dwn-card dd-card-1">
+              <a href="courses.html?category=Business">
+                <span>
+                  <img src="images/business.png" />
+                </span>
+                <p>Business</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-2">
+              <a href="courses.html?category=Technology">
+                <span>
+                  <img src="images/tv.png" />
+                </span>
+                <p>Technology</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-3">
+              <a href="courses.html?category=Development">
+                <span>
+                  <img src="images/purp-plane.png" />
+                </span>
+                <p>Development</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-4">
+              <a href="courses.html?category=Photography">
+                <span>
+                  <img src="images/camera.png" />
+                </span>
+                <p>Photography</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-5">
+              <a href="courses.html?category=Digital Marketing">
+                <span>
+                  <img src="images/pie.png" />
+                </span>
+                <p>Digital Marketing</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-6">
+              <a href="courses.html?category=Programming">
+                <span>
+                  <img src="images/pen.png" />
+                </span>
+                <p>Programming</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-7">
+              <a href="courses.html?category=Videography">
+                <span>
+                  <img src="images/video.png" />
+                </span>
+                <p>Videography</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-8">
+              <a href="courses.html?category=Illustration">
+                <span>
+                  <img src="images/tab.png" />
+                </span>
+                <p>Illustration</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="homepage.html"
+          >Home
+          <p class="cap">^</p></a
+        >
+        <a href="instructor.html"
+          >Instructors
+          <p class="cap">^</p></a
+        >
+        <a href="#contact"
+          >Contact
+          <p class="cap">^</p></a
+        >
       </nav>
+
       <div class="login-signup">
-        <a href="login.html">Login</a>
+        <button id="loginBtn">Login</button>
         <p>or</p>
-        <a href="signup.html">Sign-Up</a>
+        <button id="signupBtn">Sign Up</button>
+      </div>
+
+      <div class="profile">
+        <span class="profile-logo">
+          <img src="images/profile.png" />
+        </span>
+        <div class="profile-dropdown">
+          <span><a href="ProfilePages/student-dashboard.html">Profile</a></span>
+          <span><a>Settings</a></span>
+          <span><a>Log-Out</a></span>
+        </div>
       </div>
     </header>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content hei-l">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+          <div class="left-section col-login">
+            <img src="images/girl-studying1.jpeg" alt="Login Illustration" />
+          </div>
+          <div class="right-section">
+            <h2>Login to your account</h2>
+            <div class="social-login">
+              <span>Login with</span>
+              <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-google"></i>
+                <i class="fab fa-linkedin"></i>
+              </div>
+            </div>
+            <form id="loginForm">
+              <label for="email">Your Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+              <p id="invalid-login"><em>Invalid Username or Password</em></p>
+              <a href="#" class="forgot-password">Forgot password?</a>
+              <button type="submit" class="login-btn">Log In</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+      <div class="modal-content hei-s">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+          <div class="left-section col-signup">
+            <img src="images/girl-studying2.jpeg" alt="Signup Illustration" />
+          </div>
+          <div class="right-section">
+            <h2>Create an account</h2>
+            <div class="social-login">
+              <span>Sign up with</span>
+              <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-google"></i>
+                <i class="fab fa-linkedin"></i>
+              </div>
+            </div>
+            <form id="signupForm">
+              <div class="name">
+                <div class="name-box">
+                  <label for="first_name">First Name:</label>
+                  <input
+                    type="text"
+                    id="first_name"
+                    name="first_name"
+                    placeholder="first name"
+                    required
+                  />
+                </div>
+                <div class="name-box">
+                  <label for="last_name">Last Name:</label>
+                  <input
+                    type="text"
+                    id="last_name"
+                    name="last_name"
+                    placeholder="last name"
+                    required
+                  />
+                </div>
+              </div>
+              <label for="account-type" id="account-type-label"
+                >Account Type:</label
+              >
+              <select id="account-type-selector" name="account-type">
+                <option value="Student">Student</option>
+                <option value="Teacher">Teacher</option>
+              </select>
+
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+              <label for="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+              <p id="pass-pattern">
+                <em>
+                  Password must be 8 characters long, must contain atleast 1
+                  special character, 1 Uppercase Letter, 1 Number.
+                </em>
+              </p>
+              <button type="submit" class="signup-btn">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <main>
       <section class="info-bg">
-        <div class="background">
-          <div class="atom-img">
-            <img src="images/atom.png" />
-          </div>
-          <div class="feather-img">
-            <img src="images/feather-pen.png" />
-          </div>
-          <div class="paper-plane-img">
-            <img src="images/paper-plane.png" />
-          </div>
-          <div class="trophy-img">
-            <img src="images/trophy.png" />
-          </div>
-          <div class="document-img">
-            <img src="images/document.png" />
-          </div>
-          <div class="orange-ball-img">
-            <img src="images/orange-ball.jpg" />
-          </div>
-          <div class="paper-plane2-img">
-            <img src="images/paper-plane2.png" />
-          </div>
+        <div class="atom-img">
+          <img src="images/atom.png" />
+        </div>
+        <div class="feather-img">
+          <img src="images/feather-pen.png" />
+        </div>
+        <div class="paper-plane-img">
+          <img src="images/paper-plane.png" />
+        </div>
+        <div class="trophy-img">
+          <img src="images/trophy.png" />
+        </div>
+        <div class="document-img">
+          <img src="images/document.png" />
+        </div>
+        <div class="orange-ball-img">
+          <img src="images/orange-ball.jpg" />
+        </div>
+        <div class="paper-plane2-img">
+          <img src="images/paper-plane2.png" />
         </div>
       </section>
       <section class="info-fg">
         <div class="info-left">
           <span class="orng-line"></span>
-          <h1>Learn online from leaders in Business Education</h1>
+          <h1>Learn online from leaders in business Education</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
             alias natus maxime ratione earum, consectetur repellendus nulla sint
             harum tenetur praesentium, non esse quibusdam itaque eaque quasi.
             Sed, est quam?
           </p>
-          <div class="search-bar">
-            <form>
-              <input type="text" placeholder="Search Courses" name="search" />
-              <span>Search Now</span>
+          <div class="search-bar btn-anim">
+            <form id="search-form">
+              <input
+                id="search-input"
+                type="text"
+                placeholder="Search courses"
+                name="search"
+              />
+              <button type="submit">Search Now</button>
+              <!-- <span>Search Now</span> -->
             </form>
           </div>
         </div>
@@ -80,6 +319,640 @@
           <img src="images/student.png" />
         </div>
       </section>
+      <!-- Categories Section -->
+      <section class="categories">
+        <div class="categories-container">
+          <p>
+            <a>#1</a> Worldwide Online Learning & Skills Development Platform
+          </p>
+          <div class="browse-section">
+            <div class="browse-center-content">
+              <div class="browse-top">
+                <span class="orng-line"></span>
+                <p>Browse Categories</p>
+              </div>
+              <h2>Explore our Online Subjects</h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form, by
+                injected humour.
+              </p>
+            </div>
+          </div>
+          <div class="categories-buttons">
+            <div class="category-btn">
+              <img id="dna" src="images/dna.png" />
+              <span><a href="courses.html?category=Science">Science</a></span>
+              <img src="images/arrow-right.png" />
+            </div>
+            <div class="category-btn">
+              <img id="dollar" src="images/dollar.png" />
+              <span><a href="courses.html?category=Business">Business</a></span>
+              <img src="images/arrow-right.png" />
+            </div>
+            <div class="category-btn">
+              <img id="code" src="images/code.png" />
+              <span
+                ><a href="courses.html?category=Development"
+                  >Development</a
+                ></span
+              >
+              <img src="images/arrow-right.png" />
+            </div>
+            <div class="category-btn">
+              <img id="cube" src="images/cube.png" />
+              <span><a href="courses.html?category=Career">Career</a></span>
+              <img src="images/arrow-right.png" />
+            </div>
+            <div class="category-btn">
+              <img id="design" src="images/design.png" />
+              <span
+                ><a href="courses.html?category=Arts & Design"
+                  >Arts & Design</a
+                ></span
+              >
+              <img src="images/arrow-right.png" />
+            </div>
+            <div class="category-btn">
+              <img id="mace" src="images/mace.png" />
+              <span><a href="courses.html?category=Law">Law</a></span>
+              <img src="images/arrow-right.png" />
+            </div>
+            <div class="category-btn">
+              <img id="ambulance" src="images/ambulance.png" />
+              <span><a href="courses.html?category=MBBS">MBBS</a></span>
+              <img src="images/arrow-right.png" />
+            </div>
+            <div class="category-btn">
+              <img id="techno" src="images/techno.png" />
+              <span
+                ><a href="courses.html?category=Technological"
+                  >Technological</a
+                ></span
+              >
+              <img src="images/arrow-right.png" />
+            </div>
+          </div>
+          <div class="all-category-btn">
+            <!-- <span class="all-categories-button btn-anim">All Categories</span> -->
+            <button class="all-categories-button btn-anim">
+              All Categories
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lilesh Work -->
+      <!--what-loking-for start-->
+      <section
+        id="register-now"
+        class="what-looking-for pos-rel gradient-bg pt-135 pb-115 pt-md-90 pb-md-70 pt-xs-90 pb-xs-70"
+      >
+        <div class="what-blur-bg-three"></div>
+        <div class="container-what">
+          <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8">
+              <div class="section-title text-center mb-65">
+                <h2 class="mb-20">What you Looking For?</h2>
+                <p>
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-85">
+            <div class="reg-img reg-sec col-xl-6 col-lg-6 col-md-6">
+              <div class="what-box text-center mb-35">
+                <div class="what-box__icon wb-icon-2 mb-30">
+                  <img src="images/professor.svg" alt="" />
+                </div>
+                <h3>Do you want to teach here?</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  di nonumy eirmod tempor invidunt ut labore et dolore magn aliq
+                  erat.
+                </p>
+                <a class="theme_btn border_btn">Register Now</a>
+              </div>
+            </div>
+            <div class="reg-img reg-sec col-xl-6 col-lg-6 col-md-6">
+              <div
+                class="what-box text-center mb-35 wow fadeInUp2 animated"
+                data-wow-delay=".2s"
+              >
+                <div class="what-box__icon wb-icon-2 mb-30">
+                  <img src="images/reading-student.svg" alt="" />
+                </div>
+                <h3>Do you want to learn here?</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  di nonumy eirmod tempor invidunt ut labore et dolore magn aliq
+                  erat.
+                </p>
+                <a class="theme_btn border_btn active">Register Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--what-loking-for end-->
+
+      <!-- Courses part start-->
+      <section class="courses">
+        <div class="course-Section">
+          <!-- heading start -->
+          <div class="heading-Section">
+            <div class="left-part">
+              <div class="title">
+                <h5 class="t1">Featured courses</h5>
+                <h2 class="t2">Explore our Popular courses</h2>
+                <p>
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour.
+                </p>
+              </div>
+            </div>
+            <div class="Right-part">
+              <div class="buttons">
+                <button class="b selected" data-filter="*">All</button>
+                <button class="b" data-filter=".cat1">Career</button>
+                <button class="b" data-filter=".cat2">Development</button>
+                <button class="b" data-filter=".cat3">Business</button>
+              </div>
+            </div>
+          </div>
+          <!-- heading End -->
+
+          <!-- List Courses start-->
+          <div class="grid-course">
+            <div class="course-item">
+              <div class="item1 course-card">
+                <div class="img-part">
+                  <img class="course-image" src="images/07.png" alt="" />
+                  <div class="feedback-tag">
+                    4.8<img src="images/star.png" />(256)
+                  </div>
+                </div>
+                <div class="course-details">
+                  <div class="tags">
+                    <span>Science</span>
+                    <!-- <span>Lab</span> -->
+                    <a class="price-tag" href="#instructor-details">Rs.139</a>
+                  </div>
+                  <h4 class="subtitle">
+                    <a href="course-details.html"
+                      >Take Your Career to the Next Level Future</a
+                    >
+                  </h4>
+                  <div class="timebar-icon">
+                    <span class="course_duration"
+                      ><img
+                        class="icon"
+                        src="images/time.svg"
+                        alt="course-meta"
+                      />
+                      12 Periods</span
+                    >
+                    <span class="course_difficulty"
+                      ><img
+                        class="icon"
+                        src="images/bar-chart.svg"
+                        alt="course-meta"
+                      />
+                      Intermediate</span
+                    >
+                  </div>
+                  <p class="sub-sub-title">
+                    There are many variations of passages of with Lorem Ipsum
+                    available.
+                  </p>
+                  <div class="course_author">
+                    <div class="author-img-details">
+                      <img src="images/prof.png" alt="" />
+                      <div class="authors-details">
+                        <h5>Mark Herry</h5>
+                        <span>Career Developer</span>
+                      </div>
+                    </div>
+                    <p><span>6593+</span> Students</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item2 course-card">
+                <div class="img-part">
+                  <img class="course-image" src="images/07.png" alt="" />
+                  <div class="feedback-tag">
+                    4.8<img src="images/star.png" />(256)
+                  </div>
+                </div>
+                <div class="course-details">
+                  <div class="tags">
+                    <span>Science</span>
+                    <!-- <span>Lab</span> -->
+                    <a class="price-tag" href="#instructor-details">Rs.139</a>
+                  </div>
+                  <h4 class="subtitle">
+                    <a href="course-details.html"
+                      >Take Your Career to the Next Level Future</a
+                    >
+                  </h4>
+                  <div class="timebar-icon">
+                    <span class="course_duration"
+                      ><img
+                        class="icon"
+                        src="images/time.svg"
+                        alt="course-meta"
+                      />
+                      12 Periods</span
+                    >
+                    <span class="course_difficulty"
+                      ><img
+                        class="icon"
+                        src="images/bar-chart.svg"
+                        alt="course-meta"
+                      />
+                      Intermediate</span
+                    >
+                  </div>
+                  <p class="sub-sub-title">
+                    There are many variations of passages of with Lorem Ipsum
+                    available.
+                  </p>
+                  <div class="course_author">
+                    <div class="author-img-details">
+                      <img src="images/prof.png" alt="" />
+                      <div class="authors-details">
+                        <h5>Mark Herry</h5>
+                        <span>Career Developer</span>
+                      </div>
+                    </div>
+                    <p><span>6593+</span> Students</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item3 course-card">
+                <div class="img-part">
+                  <img class="course-image" src="images/07.png" alt="" />
+                  <div class="feedback-tag">
+                    4.8<img src="images/star.png" />(256)
+                  </div>
+                </div>
+                <div class="course-details">
+                  <div class="tags">
+                    <span>Science</span>
+                    <!-- <span>Lab</span> -->
+                    <a class="price-tag" href="#instructor-details">Rs.139</a>
+                  </div>
+                  <h4 class="subtitle">
+                    <a href="course-details.html"
+                      >Take Your Career to the Next Level Future</a
+                    >
+                  </h4>
+                  <div class="timebar-icon">
+                    <span class="course_duration"
+                      ><img
+                        class="icon"
+                        src="images/time.svg"
+                        alt="course-meta"
+                      />
+                      12 Periods</span
+                    >
+                    <span class="course_difficulty"
+                      ><img
+                        class="icon"
+                        src="images/bar-chart.svg"
+                        alt="course-meta"
+                      />
+                      Intermediate</span
+                    >
+                  </div>
+                  <p class="sub-sub-title">
+                    There are many variations of passages of with Lorem Ipsum
+                    available.
+                  </p>
+                  <div class="course_author">
+                    <div class="author-img-details">
+                      <img src="images/prof.png" alt="" />
+                      <div class="authors-details">
+                        <h5>Mark Herry</h5>
+                        <span>Career Developer</span>
+                      </div>
+                    </div>
+                    <p><span>6593+</span> Students</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item4 course-card">
+                <div class="img-part">
+                  <img class="course-image" src="images/07.png" alt="" />
+                  <div class="feedback-tag">
+                    4.8<img src="images/star.png" />(256)
+                  </div>
+                </div>
+                <div class="course-details">
+                  <div class="tags">
+                    <span>Science</span>
+                    <!-- <span>Lab</span> -->
+                    <a class="price-tag" href="#instructor-details">Rs.139</a>
+                  </div>
+                  <h4 class="subtitle">
+                    <a href="course-details.html"
+                      >Take Your Career to the Next Level Future</a
+                    >
+                  </h4>
+                  <div class="timebar-icon">
+                    <span class="course_duration"
+                      ><img
+                        class="icon"
+                        src="images/time.svg"
+                        alt="course-meta"
+                      />
+                      12 Periods</span
+                    >
+                    <span class="course_difficulty"
+                      ><img
+                        class="icon"
+                        src="images/bar-chart.svg"
+                        alt="course-meta"
+                      />
+                      Intermediate</span
+                    >
+                  </div>
+                  <p class="sub-sub-title">
+                    There are many variations of passages of with Lorem Ipsum
+                    available.
+                  </p>
+                  <div class="course_author">
+                    <div class="author-img-details">
+                      <img src="images/prof.png" alt="" />
+                      <div class="authors-details">
+                        <h5>Mark Herry</h5>
+                        <span>Career Developer</span>
+                      </div>
+                    </div>
+                    <p><span>6593+</span> Students</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item5 course-card">
+                <div class="img-part">
+                  <img class="course-image" src="images/07.png" alt="" />
+                  <div class="feedback-tag">
+                    4.8<img src="images/star.png" />(256)
+                  </div>
+                </div>
+                <div class="course-details">
+                  <div class="tags">
+                    <span>Science</span>
+                    <!-- <span>Lab</span> -->
+                    <a class="price-tag" href="#instructor-details">Rs.139</a>
+                  </div>
+                  <h4 class="subtitle">
+                    <a href="course-details.html"
+                      >Take Your Career to the Next Level Future</a
+                    >
+                  </h4>
+                  <div class="timebar-icon">
+                    <span class="course_duration"
+                      ><img
+                        class="icon"
+                        src="images/time.svg"
+                        alt="course-meta"
+                      />
+                      12 Periods</span
+                    >
+                    <span class="course_difficulty"
+                      ><img
+                        class="icon"
+                        src="images/bar-chart.svg"
+                        alt="course-meta"
+                      />
+                      Intermediate</span
+                    >
+                  </div>
+                  <p class="sub-sub-title">
+                    There are many variations of passages of with Lorem Ipsum
+                    available.
+                  </p>
+                  <div class="course_author">
+                    <div class="author-img-details">
+                      <img src="images/prof.png" alt="" />
+                      <div class="authors-details">
+                        <h5>Mark Herry</h5>
+                        <span>Career Developer</span>
+                      </div>
+                    </div>
+                    <p><span>6593+</span> Students</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item6 course-card">
+                <div class="img-part">
+                  <img class="course-image" src="images/07.png" alt="" />
+                  <div class="feedback-tag">
+                    4.8<img src="images/star.png" />(256)
+                  </div>
+                </div>
+                <div class="course-details">
+                  <div class="tags">
+                    <span>Science</span>
+                    <!-- <span>Lab</span> -->
+                    <a class="price-tag" href="#instructor-details">Rs.139</a>
+                  </div>
+                  <h4 class="subtitle">
+                    <a href="course-details.html"
+                      >Take Your Career to the Next Level Future</a
+                    >
+                  </h4>
+                  <div class="timebar-icon">
+                    <span class="course_duration"
+                      ><img
+                        class="icon"
+                        src="images/time.svg"
+                        alt="course-meta"
+                      />
+                      12 Periods</span
+                    >
+                    <span class="course_difficulty"
+                      ><img
+                        class="icon"
+                        src="images/bar-chart.svg"
+                        alt="course-meta"
+                      />
+                      Intermediate</span
+                    >
+                  </div>
+                  <p class="sub-sub-title">
+                    There are many variations of passages of with Lorem Ipsum
+                    available.
+                  </p>
+                  <div class="course_author">
+                    <div class="author-img-details">
+                      <img src="images/prof.png" alt="" />
+                      <div class="authors-details">
+                        <h5>Mark Herry</h5>
+                        <span>Career Developer</span>
+                      </div>
+                    </div>
+                    <p><span>6593+</span> Students</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="explore-section">
+            <div class="explore">
+              <a href="#courseslink" class="explore_btn"
+                ><button class="btn-anim">Explore More</button></a
+              >
+            </div>
+          </div>
+          <!-- List Courses End -->
+        </div>
+
+        <!-- Learn new skill Section -->
+        <div class="learn-skill-ad">
+          <div class="skill-ad-box">
+            <div class="single-box">
+              <div class="single-box-icon bc-col1">
+                <img src="images/bar-chart.png" alt="L" />
+              </div>
+              <h4 class="subtitle">Learn New Skills</h4>
+              <p>
+                There are many variations of passag of Lorm Ipsum available.
+              </p>
+            </div>
+          </div>
+          <div class="skill-ad-box">
+            <div class="single-box">
+              <div class="single-box-icon bc-col2">
+                <img src="images/triangle-guy.png" alt="E" />
+              </div>
+              <h4 class="subtitle">Expert Trainers</h4>
+              <p>
+                There are many variations of passag of Lorm Ipsum available.
+              </p>
+            </div>
+          </div>
+          <div class="skill-ad-box">
+            <div class="single-box">
+              <div class="single-box-icon bc-col3">
+                <img src="images/report.png" alt="F" />
+              </div>
+              <h4 class="subtitle">Free Trial Lesson</h4>
+              <p>
+                There are many variations of passag of Lorm Ipsum available.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Number of Users Start-->
+        <div class="number-of-users">
+          <div class="users">
+            <div class="counters count-0">
+              <h2><span class="counter">100+</span></h2>
+              <h5>Specialist Good Teachers</h5>
+            </div>
+          </div>
+          <div class="users">
+            <div class="counters count-1">
+              <h2><span class="counter">1000+</span></h2>
+              <h5>Online Learning Courses</h5>
+            </div>
+          </div>
+          <div class="users">
+            <div class="counters count-2">
+              <h2><span class="counter">13654+</span></h2>
+              <h5>Online &amp; Offline Students</h5>
+            </div>
+          </div>
+          <div class="users">
+            <div class="counters count-3">
+              <h2><span class="counter">364+</span></h2>
+              <h5>Special Awards Winning</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Number of Users End -->
+      </section>
+      <!-- Courses part End -->
     </main>
+    <!-- Nihar's Work Contd.. -->
+    <footer>
+      <div class="foot-top">
+        <h2>Tutopia.</h2>
+        <div class="socials">
+          <span class="socials-icon-bg"
+            ><img id="facebook" src="images/facebook.png"
+          /></span>
+          <span class="socials-icon-bg"
+            ><img id="twitter" src="images/twitter.png"
+          /></span>
+          <span class="socials-icon-bg"
+            ><img id="linkedin" src="images/linkedin.png"
+          /></span>
+          <span class="socials-icon-bg"
+            ><img id="google-plus" src="images/google-plus.png"
+          /></span>
+        </div>
+      </div>
+      <!-- <hr /> -->
+      <div class="foot-mid">
+        <div class="about-us footer-cards">
+          <h3>About Us</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore amet
+            numquam magnam.
+          </p>
+          <p>tutopia@edu.ac.in</p>
+          <p>+00 235 695 58 , +0239564</p>
+        </div>
+        <div class="contact-us footer-cards">
+          <h3>Contact Us</h3>
+          <p>tutopia@edu.ac.in</p>
+          <p>+00 235 695 58</p>
+          <p>Terms & Conditions</p>
+          <p>Privacy Policy</p>
+        </div>
+        <div class="quick-links footer-cards">
+          <h3>Quick Links</h3>
+          <p>About Us</p>
+          <p>Explore pages</p>
+          <p>Our Services</p>
+          <p>Destinations</p>
+        </div>
+        <div class="subscribe footer-cards">
+          <h3>Subscribe Now</h3>
+          <form id="subscribe-form">
+            <input type="text" placeholder="Email Here" name="subscribe-form" />
+            <button>SUBSCRIBE NOW</button>
+          </form>
+        </div>
+      </div>
+      <!-- <hr /> -->
+      <div class="foot-bottom">
+        <div class="copyright">
+          Copyright@2024 Tutopia. All Rights Reserved.
+        </div>
+        <div class="help">
+          <a>Help</a>
+          <a>Privacy Policy</a>
+          <a>Terms & Conditions</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="login-signup.js"></script>
+    <script src="homepage.js"></script>
   </body>
 </html>

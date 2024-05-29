@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UtF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutopia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="course-details.css" rel="stylesheet" />
+    <link rel="stylesheet" href="login-signup.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <div id="filler"></div>
+    <header>
+      <div class="logo"><a href="homepage.html">Tutopia.</a></div>
+      <nav class="links">
+        <div class="all-categories">
+          <a href="#categories" id="link-1"
+            >All categories
+            <p class="cap">^</p>
+          </a>
+
+          <div class="header-categories">
+            <div class="drp-dwn-card dd-card-1">
+              <a>
+                <span>
+                  <img src="images/business.png" />
+                </span>
+                <p>Business</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-2">
+              <a>
+                <span>
+                  <img src="images/tv.png" />
+                </span>
+                <p>Technology</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-3">
+              <a>
+                <span>
+                  <img src="images/purp-plane.png" />
+                </span>
+                <p>Development</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-4">
+              <a>
+                <span>
+                  <img src="images/camera.png" />
+                </span>
+                <p>Photography</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-5">
+              <a>
+                <span>
+                  <img src="images/pie.png" />
+                </span>
+                <p>Digital Marketing</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-6">
+              <a>
+                <span>
+                  <img src="images/pen.png" />
+                </span>
+                <p>Programming</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-7">
+              <a>
+                <span>
+                  <img src="images/video.png" />
+                </span>
+                <p>Videography</p>
+              </a>
+            </div>
+            <div class="drp-dwn-card dd-card-8">
+              <a>
+                <span>
+                  <img src="images/tab.png" />
+                </span>
+                <p>Illustration</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="homepage.html"
+          >Home
+          <p class="cap">^</p></a
+        >
+        <a href="instructor.html"
+          >Instructors
+          <p class="cap">^</p></a
+        >
+        <a href="#contact"
+          >Contact
+          <p class="cap">^</p></a
+        >
+      </nav>
+
+      <div class="profile">
+        <span class="profile-logo">
+          <img src="images/profile.png" />
+        </span>
+        <div class="profile-dropdown">
+          <span><a href="ProfilePages/student-dashboard.html">Profile</a></span>
+          <span><a>Settings</a></span>
+          <span><a>Log-Out</a></span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="breadcrumbs">
+        <a href="homepage.html">Home</a>
+        <p>></p>
+        <a class="course-name">Fundamentals of Photography</a>
+      </div>
+      <section class="video-section">
+        <div class="left-box">
+          <h2 class="course-name">Fundamentals of Photography</h2>
+          <h4 class="teacher-name">Photography By Jason Momoa</h4>
+          <video controls>
+            <source src="videos/test.mp4" />
+          </video>
+          <div class="tags">
+            <a>Add to Wishlist</a>
+            <a>Share</a>
+            <a>Gift this Course</a>
+          </div>
+        </div>
+        <div class="right-box">
+          <div class="price-box">
+            <span>Rs.5999</span>
+            <span class="course-price">Rs.2999</span>
+            <button>Buy</button>
+            <span><img src="images/play.png" /></span>
+          </div>
+          <h5 class="num_lessions_duration">25 Lessons (3h 26m)</h5>
+          <div class="video-list">
+            <!-- <div class="vid-list-element">
+              <div class="vle-left">
+                <img src="images/video-player.png" />
+                <a class="course-lecture-name">01.Intro Video</a>
+              </div>
+              <p class="course-lecture-duration">4:02</p>
+            </div>
+            <div class="vid-list-element">
+              <div class="vle-left">
+                <img src="images/video-player.png" />
+                <a class="course-lecture-name">01.Intro Video</a>
+              </div>
+              <p class="course-lecture-duration">4:02</p>
+            </div>
+            <div class="vid-list-element">
+              <div class="vle-left">
+                <img src="images/video-player.png" />
+                <a class="course-lecture-name">01.Intro Video</a>
+              </div>
+              <p class="course-lecture-duration">4:02</p>
+            </div>
+            <div class="vid-list-element">
+              <div class="vle-left">
+                <img src="images/video-player.png" />
+                <a class="course-lecture-name">01.Intro Video</a>
+              </div>
+              <p class="course-lecture-duration">4:02</p>
+            </div>
+            <div class="vid-list-element">
+              <div class="vle-left">
+                <img src="images/video-player.png" />
+                <a class="course-lecture-name">01.Intro Video</a>
+              </div>
+              <p class="course-lecture-duration">4:02</p>
+            </div>
+            <div class="vid-list-element">
+              <div class="vle-left">
+                <img src="images/video-player.png" />
+                <a class="course-lecture-name">01.Intro Video</a>
+              </div>
+              <p class="course-lecture-duration">4:02</p>
+            </div>
+            <div class="vid-list-element">
+              <div class="vle-left">
+                <img src="images/video-player.png" />
+                <a class="course-lecture-name">01.Intro Video</a>
+              </div>
+              <p class="course-lecture-duration">4:02</p>
+            </div>
+            <div class="vid-list-element">
+              <div class="vle-left">
+                <img src="images/video-player.png" />
+                <a class="course-lecture-name">01.Intro Video</a>
+              </div>
+              <p class="course-lecture-duration">4:02</p>
+            </div>
+            <div class="vid-list-element">
+              <div class="vle-left">
+                <img src="images/video-player.png" />
+                <a class="course-lecture-name">01.Intro Video</a>
+              </div>
+              <p class="course-lecture-duration">4:02</p>
+            </div>
+            <div class="vid-list-element">
+              <div class="vle-left">
+                <img src="images/video-player.png" />
+                <a class="course-lecture-name">01.Intro Video</a>
+              </div>
+              <p class="course-lecture-duration">4:02</p>
+            </div>
+            <div class="vid-list-element">
+              <div class="vle-left">
+                <img src="images/video-player.png" />
+                <a class="course-lecture-name">01.Intro Video</a>
+              </div>
+              <p class="course-lecture-duration">4:02</p>
+            </div>
+            <div class="vid-list-element">
+              <div class="vle-left">
+                <img src="images/video-player.png" />
+                <a class="course-lecture-name">01.Intro Video</a>
+              </div>
+              <p class="course-lecture-duration">4:02</p>
+            </div>
+            <div class="vid-list-element">
+              <div class="vle-left">
+                <img src="images/video-player.png" />
+                <a class="course-lecture-name">01.Intro Video</a>
+              </div>
+              <p class="course-lecture-duration">4:02</p>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <section class="vid-details-section">
+        <div class="vds-left-box">
+          <h2 class="course-name">Photography Learning A-Z</h2>
+          <p class="course-info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+            dolorum unde exercitationem molestiae voluptate nobis magni officiis
+            aperiam voluptatem. Fuga, aliquam ratione. Ipsam, dolorem incidunt
+            libero numquam nihil repudiandae laborum! Minus qui nisi quidem ex
+            dolorum, officia distinctio harum. Harum in incidunt exercitationem
+            earum, quas neque totam inventore eum voluptas ipsam repellendus
+            facilis beatae provident blanditiis ab illum iusto quam?
+          </p>
+
+          <div class="vds-left-top">
+            <div class="best-seller-box">
+              <span>Bestseller</span>
+              <div class="stars-rating">
+                <div class="stars">
+                  <img src="images/star.png" />
+                  <img src="images/star.png" />
+                  <img src="images/star.png" />
+                  <img src="images/star.png" />
+                  <img src="images/star.png" />
+                </div>
+                <p>4 (543)</p>
+              </div>
+              <p id="enrolled">Enrolled 360,349</p>
+            </div>
+            <div class="created-by">
+              <span>Created By:</span>
+              <p class="teacher-name">Jason Momoa and Photography Team.</p>
+            </div>
+            <div class="date-lang">
+              <span>Date: 05/04/2024</span>
+              <span>Language: English</span>
+            </div>
+          </div>
+
+          <div class="vds-left-mid">
+            <h2>Meet Your Teacher</h2>
+            <div class="teach-details">
+              <div class="profile-photo">
+                <img src="images/teacher-pi.png" />
+              </div>
+              <div class="name-title">
+                <p class="teacher-name">Jason Momoa</p>
+                <p class="teacher-title">Photography Specialist</p>
+              </div>
+            </div>
+            <p class="teacher-info">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Excepturi iure quis culpa doloribus explicabo, velit in
+              consequuntur reiciendis atque impedit iusto soluta itaque aliquid
+              non temporibus aperiam commodi necessitatibus. Facere. Mollitia
+              provident natus repellendus officia enim nisi, hic veniam aliquam
+              blanditiis sit quis. Pariatur cupiditate optio dolores reiciendis
+              incidunt harum fugiat ab quia deserunt placeat, a necessitatibus
+              maxime autem eos. Velit dolores in omnis doloremque deleniti cum
+              distinctio temporibus quo dolor iure ipsa earum neque laudantium
+              voluptatem minus, nesciunt corporis inventore porro accusamus
+              blanditiis explicabo quaerat. A aliquid quaerat voluptas.
+            </p>
+          </div>
+          <div class="vds-left-bottom">
+            <h2>Tags</h2>
+            <span>Photography</span>
+            <span>Outdoor</span>
+            <span>Indoor Photography</span>
+            <span>DSLR</span>
+            <span>Creative</span>
+            <span>Camera</span>
+            <span>Professional</span>
+          </div>
+        </div>
+        <div class="vds-right-box">
+          <div class="course-short-details">
+            <h2>Course Includes</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+              cupiditate impedit odit dolor sint nulla totam quaerat assumenda
+              rerum, modi quas fugit autem ducimus, laboriosam consequatur
+              doloribus illo exercitationem atque?
+            </p>
+            <div class="course-features">
+              <span>
+                <img src="images/camcorder.png" />
+                <p>4 Hours on demand video.</p>
+              </span>
+              <span>
+                <img src="images/article.png" />
+                <p>4 Hours on demand video.</p>
+              </span>
+              <span>
+                <img src="images/download.png" />
+                <p>4 Hours on demand video.</p>
+              </span>
+              <span>
+                <img src="images/infinity.png" />
+                <p>4 Hours on demand video.</p>
+              </span>
+              <span>
+                <img src="images/mobile.png" />
+                <p>4 Hours on demand video.</p>
+              </span>
+              <span>
+                <img src="images/certificate.png" />
+                <p>4 Hours on demand video.</p>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="more-courses">
+        <h2 class="more-from">More From Jason Momoa</h2>
+        <div class="carousel swiper">
+          <div class="card-wrapper swiper-wrapper">
+            <div class="card swiper-slide">
+              <div class="img-section">
+                <img src="images/07.png" />
+                <span class="feedback-tag"
+                  >4 <img src="images/star.png" /> (256)</span
+                >
+              </div>
+              <div class="tag-section">
+                <span>Science</span>
+              </div>
+              <div class="title-section">
+                <h3>
+                  <a href="course-details.html">
+                    Take Your Career To Next Level 1
+                  </a>
+                </h3>
+                <p class="short-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                  distinctio, vitae in quo expedita eius.
+                </p>
+                <div class="difficulty-box">
+                  <div class="period">
+                    <img src="images/time.svg" />
+                    12 Periods
+                  </div>
+                  <div class="difficulty">
+                    <img src="images/medium.png" />
+                    Intermediate
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card swiper-slide">
+              <div class="img-section">
+                <img src="images/07.png" />
+                <span class="feedback-tag"
+                  >4 <img src="images/star.png" /> (256)</span
+                >
+              </div>
+              <div class="tag-section">
+                <span>Science</span>
+              </div>
+              <div class="title-section">
+                <h3>
+                  <a href="course-details.html">
+                    Take Your Career To Next Level 1
+                  </a>
+                </h3>
+                <p class="short-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                  distinctio, vitae in quo expedita eius.
+                </p>
+                <div class="difficulty-box">
+                  <div class="period">
+                    <img src="images/time.svg" />
+                    12 Periods
+                  </div>
+                  <div class="difficulty">
+                    <img src="images/medium.png" />
+                    Intermediate
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card swiper-slide">
+              <div class="img-section">
+                <img src="images/07.png" />
+                <span class="feedback-tag"
+                  >4 <img src="images/star.png" /> (256)</span
+                >
+              </div>
+              <div class="tag-section">
+                <span>Science</span>
+              </div>
+              <div class="title-section">
+                <h3>
+                  <a href="course-details.html">
+                    Take Your Career To Next Level 1
+                  </a>
+                </h3>
+                <p class="short-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                  distinctio, vitae in quo expedita eius.
+                </p>
+                <div class="difficulty-box">
+                  <div class="period">
+                    <img src="images/time.svg" />
+                    12 Periods
+                  </div>
+                  <div class="difficulty">
+                    <img src="images/medium.png" />
+                    Intermediate
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card swiper-slide">
+              <div class="img-section">
+                <img src="images/07.png" />
+                <span class="feedback-tag"
+                  >4 <img src="images/star.png" /> (256)</span
+                >
+              </div>
+              <div class="tag-section">
+                <span>Science</span>
+              </div>
+              <div class="title-section">
+                <h3>
+                  <a href="course-details.html">
+                    Take Your Career To Next Level 1
+                  </a>
+                </h3>
+                <p class="short-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                  distinctio, vitae in quo expedita eius.
+                </p>
+                <div class="difficulty-box">
+                  <div class="period">
+                    <img src="images/time.svg" />
+                    12 Periods
+                  </div>
+                  <div class="difficulty">
+                    <img src="images/medium.png" />
+                    Intermediate
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Nihar's Work Contd.. -->
+    <footer>
+      <div class="foot-top">
+        <h2>Tutopia.</h2>
+        <div class="socials">
+          <span class="socials-icon-bg"
+            ><img id="facebook" src="images/facebook.png"
+          /></span>
+          <span class="socials-icon-bg"
+            ><img id="twitter" src="images/twitter.png"
+          /></span>
+          <span class="socials-icon-bg"
+            ><img id="linkedin" src="images/linkedin.png"
+          /></span>
+          <span class="socials-icon-bg"
+            ><img id="google-plus" src="images/google-plus.png"
+          /></span>
+        </div>
+      </div>
+      <!-- <hr /> -->
+      <div class="foot-mid">
+        <div class="about-us footer-cards">
+          <h3>About Us</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore amet
+            numquam magnam.
+          </p>
+          <p>tutopia@edu.ac.in</p>
+          <p>+00 235 695 58 , +0239564</p>
+        </div>
+        <div class="contact-us footer-cards">
+          <h3>Contact Us</h3>
+          <p>tutopia@edu.ac.in</p>
+          <p>+00 235 695 58</p>
+          <p>Terms & Conditions</p>
+          <p>Privacy Policy</p>
+        </div>
+        <div class="quick-links footer-cards">
+          <h3>Quick Links</h3>
+          <p>About Us</p>
+          <p>Explore pages</p>
+          <p>Our Services</p>
+          <p>Destinations</p>
+        </div>
+        <div class="subscribe footer-cards">
+          <h3>Subscribe Now</h3>
+          <form id="subscribe-form">
+            <input type="text" placeholder="Email Here" name="subscribe-form" />
+            <button>SUBSCRIBE NOW</button>
+          </form>
+        </div>
+      </div>
+      <!-- <hr /> -->
+      <div class="foot-bottom">
+        <div class="copyright">
+          Copyright@2024 Tutopia. All Rights Reserved.
+        </div>
+        <div class="help">
+          <a>Help</a>
+          <a>Privacy Policy</a>
+          <a>Terms & Conditions</a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="course-details.js"></script>
+  </body>
+</html>

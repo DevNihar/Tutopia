@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutopia - Student Dashboard</title>
+    <link rel="stylesheet" href="student-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Tutopia.</div>
+    <nav class="links">
+      <a href="#">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">Resources</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="profile-section">
+      <div class="profile-picture">
+        <img src="prof.png" alt="Profile Picture" />
+      </div>
+      <div class="username">
+        <span>Welcome, usernmae</span>
+      </div>
+    </div>
+  </header>
+
+    <main>
+        <section class="dashboard">
+            <h1>Student Dashboard</h1>
+
+            <!-- My Courses -->
+            <section class="my-courses">
+                <h2>My Courses</h2>
+                <div class="course-list">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="reading-student.svg" alt="Course Thumbnail">
+                        </div>
+                        <div class="course-details">
+                            <h3>Introduction to Web Development</h3>
+                            <p>Learn the basics of HTML, CSS, and JavaScript</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 8 Weeks</span>
+                                <span><i class="fas fa-signal"></i> Beginner</span>
+                            </div>
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 50%;"></div>
+                                </div>
+                                <span>50% Completed</span>
+                            </div>
+                            <button class="btn btn-primary">Continue Course</button>
+                        </div>
+                    </div>
+                    <!-- Add more course cards -->
+                </div>
+            </section>
+
+            <!-- Upcoming Assignments -->
+            <section class="upcoming-assignments">
+                <h2>Upcoming Assignments</h2>
+                <div class="assignment-list">
+                    <div class="assignment-card">
+                        <h3>HTML and CSS Project</h3>
+                        <p>Build a responsive website using HTML and CSS</p>
+                        <div class="assignment-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Due: June 15, 2023</span>
+                            <span><i class="fas fa-clock"></i> 2 Weeks</span>
+                        </div>
+                        <button class="btn btn-secondary">View Assignment</button>
+                    </div>
+                    <!-- Add more assignment cards -->
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-card">
+                        <div class="activity-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h3>Assignment Submitted</h3>
+                            <p>You have successfully submitted your JavaScript assignment.</p>
+                            <span class="activity-date">June 1, 2023</span>
+                        </div>
+                    </div>
+                    <!-- Add more activity cards -->
+                </div>
+            </section>
+
+            <!-- Resources -->
+            <section class="resources">
+                <h2>Resources</h2>
+                <div class="resource-list">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="resource-details">
+                            <h3>Web Development Cheatsheet</h3>
+                            <p>A handy reference for HTML, CSS, and JavaScript</p>
+                            <button class="btn btn-primary">Download</button>
+                        </div>
+                    </div>
+                    <!-- Add more resource cards -->
+                </div>
+            </section>
+
+            <!-- Student Progress -->
+            <section class="student-progress">
+                <h2>My Progress</h2>
+                <div class="progress-chart">
+                    <canvas id="progressChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Announcements -->
+            <section class="announcements">
+                <h2>Announcements</h2>
+                <div class="announcement-list">
+                    <div class="announcement-card">
+                        <h3>New Course Added</h3>
+                        <p>We've added a new course on React.js development. Enroll now and get 20% off!</p>
+                        <span class="announcement-date">June 10, 2023</span>
+                    </div>
+                    <!-- Add more announcement cards -->
+                </div>
+            </section>
+
+            <!-- Achievements -->
+            <section class="achievements">
+                <h2>My Achievements</h2>
+                <div class="achievement-list">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="achievement-details">
+                            <h3>HTML Master</h3>
+                            <p>You've completed all HTML courses and assignments.</p>
+                        </div>
+                    </div>
+                    <!-- Add more achievement cards -->
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+      <div class="foot-top">
+        <h2>Tutopia.</h2>
+        <div class="socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="foot-mid">
+        <div class="about-us footer-cards">
+          <h3>About Us</h3>
+          <p>Tutopia is an online learning platform that provides high-quality courses and resources for students of all ages.</p>
+        </div>
+        <div class="contact-us footer-cards">
+          <h3>Contact Us</h3>
+          <p>Email: info@tutopia.com</p>
+          <p>Phone: 123-456-7890</p>
+        </div>
+        <div class="quick-links footer-cards">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="subscribe footer-cards">
+          <h3>Subscribe</h3>
+          <p>Subscribe to our newsletter for updates and promotions.</p>
+          <form>
+            <input type="email" placeholder="Enter your email" />
+            <button class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div class="copyright">
+          Copyright@2024 Tutopia. All Rights Reserved.
+        </div>
+        <div class="help">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Help Center</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
